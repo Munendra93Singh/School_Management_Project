@@ -52,8 +52,7 @@
                                         <div class="box-body">
                                             <div class="form-group col-lg-9">
                                                 <div class="form-group col-lg-3">
-                                                    <label for="dept">Fill Ragistration</label><span class="reqinput"></span>
-                                                    <%--<asp:TextBox ID="txtRegistration" runat="server" TabIndex="1" placeholder="Registration Number" class="form-control inlineDisplay" required="" Style="width: 88%"></asp:TextBox>--%>
+                                                    <label for="dept">Fill Ragistration Year</label><span class="reqinput"></span>
                                                     <asp:DropDownList ID="ddlFinyear" runat="server" TabIndex="1" class="form-control inlineDisplay" required="" Style="width: 88%;">
                                                         <asp:ListItem Text="2021-2022" Value="2021-2022"></asp:ListItem>
                                                         <asp:ListItem Text="2021-2022" Value="2021-2022"></asp:ListItem>
@@ -65,19 +64,20 @@
                                                 </div>
                                                 <div class="form-group col-lg-3">
                                                     <label for="dept">Ragistration Number:</label>
-                                                    <asp:TextBox ID="txtRollnumber" runat="server" disabled="disbaled" class="form-control  inlineDisplay" placeholder="Roll Number" size="40" Style="background-color: #EEEEEE;"></asp:TextBox>
+                                                    <asp:TextBox ID="txtRollnumber" runat="server" disabled="disbaled" class="form-control  inlineDisplay" placeholder="Roll Number" size="40" Style="background-color: #EEEEEE;">
+                                                    </asp:TextBox>
                                                 </div>
                                                 <div class="form-group col-lg-4">
-                                                    <label for="dept">St. Status:</label>
+                                                    <label for="dept">Status(Reg. Fees):</label>
                                                     <asp:TextBox ID="txtstatus" runat="server" class="form-control inlineDisplay " placeholder="Status" size="20" Style="background-color: #EEEEEE"></asp:TextBox>
                                                 </div>
                                                 <div class="form-group col-lg-5">
-                                                    <label for="dept">Roll. Num.:</label>
+                                                    <label for="dept">Roll. Num./University Num:</label>
                                                     <asp:TextBox ID="txtenrlonuber" runat="server" TabIndex="2" class="form-control  inlineDisplay" placeholder="Enrollment Num." size="40"></asp:TextBox>
                                                 </div>
                                                 <div class="form-group col-lg-5">
                                                     <label for="dept">Mobile</label>
-                                                    <asp:TextBox ID="txtmobile" runat="server" TabIndex="2" class="form-control  inlineDisplay" placeholder="SR. Num." size="40"></asp:TextBox>
+                                                    <asp:TextBox ID="txtmobile" runat="server" TabIndex="2" class="form-control  inlineDisplay" placeholder="Mobile Num." size="40"></asp:TextBox>
                                                 </div>
 
                                                 <div class="form-group col-lg-5">
@@ -135,7 +135,7 @@
                                                 </div>
                                                 <div class="form-group col-lg-3">
                                                     <label for="dept">Class:</label><span class="reqinput"></span>
-                                                    <asp:DropDownList ID="ddladdclas" runat="server" TabIndex="12" class="form-control inlineDisplay" required="" Style="width: 100%;"></asp:DropDownList>
+                                                    <asp:DropDownList ID="ddladdclas" runat="server" TabIndex="12" class="form-control inlineDisplay" Style="width: 100%;"></asp:DropDownList>
 
                                                 </div>
                                                 <div class="form-group col-lg-3">
@@ -179,11 +179,11 @@
                                                     </div>
                                                     <div class="form-group col-lg-2">
                                                         <label for="dept">State:</label><span class="reqinput"></span>
-                                                        <asp:DropDownList ID="ddlstate" runat="server" TabIndex="14" class="form-control inlineDisplay" required="" Style="width: 150px"></asp:DropDownList>
+                                                        <asp:DropDownList ID="ddlstate" runat="server" TabIndex="14" class="form-control inlineDisplay" Style="width: 150px"></asp:DropDownList>
                                                     </div>
                                                     <div class="form-group col-lg-2">
                                                         <label for="dept">District:</label><span class="reqinput"></span>
-                                                        <asp:DropDownList ID="ddlcity" runat="server" TabIndex="16" class="form-control inlineDisplay" required="" Style="width: 150px"></asp:DropDownList>
+                                                        <asp:DropDownList ID="ddlcity" runat="server" TabIndex="16" class="form-control inlineDisplay" Style="width: 150px"></asp:DropDownList>
                                                     </div>
                                                     <div class="form-group col-lg-3">
                                                         <label for="dept">Pin Code:</label>
@@ -191,78 +191,42 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <%--<div class="form-group col-lg-12">
+                                            <div class="form-group col-lg-12">
                                                 <div class="form-group col-lg-3">
-                                                    <label for="dept">Study Center:</label><span class="reqinput"></span>
-                                                    <asp:DropDownList ID="ddlcolage" runat="server" TabIndex="21" class="form-control inlineDisplay" Style="width: 200px">
+                                                    <label for="dept">Amount:</label><span class="reqinput"></span>
+                                                    <asp:TextBox ID="txtamount" runat="server" TabIndex="14" class="form-control inlineDisplay" placeholder="Amount" required="" Style="width: 80%"></asp:TextBox>
+
+                                                    <%-- <asp:DropDownList ID="ddlcolage" runat="server" TabIndex="21" class="form-control inlineDisplay" Style="width: 200px">
                                                         <asp:ListItem Text="Select" Value="Select"></asp:ListItem>
                                                         <asp:ListItem Text="Arya College of Pharmacy" Value="Arya College of Pharmacy"></asp:ListItem>
-                                                    </asp:DropDownList>
+                                                    </asp:DropDownList>--%>
                                                 </div>
                                                 <div class="form-group col-lg-3">
-                                                    <label for="dept">Class/Year:</label><span class="reqinput"></span>
+                                                    <label for="dept">Class Type:</label><span class="reqinput"></span>
                                                     <asp:DropDownList ID="ddlclassyear" runat="server" TabIndex="19" class="form-control inlineDisplay" Style="width: 200px;">
                                                     </asp:DropDownList>
-                                                    <%--<select name="ctl00$ContentPlaceHolder1$ddlClassYear" id="ContentPlaceHolder1_ddlClassYear" tabindex="19" class="form-control inlineDisplay" style="width: 200px;">
-                                                    <option selected="selected" value="">Select</option>
-                                                    <option value="Ist Year">Ist Year</option>
-                                                    <option value="IInd Year">IInd Year</option>
-                                                </select>
                                                 </div>
                                                 <div class="form-group col-lg-3">
                                                     <label for="dept">Academic Year:</label><span class="reqinput"></span>
-                                                    <asp:DropDownList ID="ddlAyear" runat="server" TabIndex="21" class="form-control inlineDisplay" Style="width: 200px"></asp:DropDownList>
-                                                    <%--                                                <select name="ctl00$ContentPlaceHolder1$ddlAcademicYear" id="ContentPlaceHolder1_ddlAcademicYear" tabindex="21" class="form-control inlineDisplay" style="width: 200px;">
-                                                    <option value="0">None</option>
-                                                    <option value="">Select</option>
-                                                    <option value="2000">2000</option>
-                                                    <option value="2001">2001</option>
-                                                    <option value="2002">2002</option>
-                                                    <option value="2003">2003</option>
-                                                    <option value="2004">2004</option>
-                                                    <option value="2005">2005</option>
-                                                    <option value="2006">2006</option>
-                                                    <option value="2007">2007</option>
-                                                    <option value="2008">2008</option>
-                                                    <option value="2009">2009</option>
-                                                    <option value="2010">2010</option>
-                                                    <option value="2011">2011</option>
-                                                    <option value="2012">2012</option>
-                                                    <option value="2013">2013</option>
-                                                    <option value="2014">2014</option>
-                                                    <option value="2015">2015</option>
-                                                    <option value="2016">2016</option>
-                                                    <option value="2017">2017</option>
-                                                    <option value="2018">2018</option>
-                                                    <option value="2019">2019</option>
-                                                    <option value="2020">2020</option>
-                                                    <option value="2021">2021</option>
-                                                    <option value="2022">2022</option>
-                                                    <option value="2023">2023</option>
-                                                    <option value="2024">2024</option>
-                                                    <option value="2025">2025</option>
-                                              </select>
+                                                    <select name="AcademicYear" id="AcademicYear" tabindex="19" class="form-control inlineDisplay" style="width: 200px;">
+                                                        <option selected="selected" value="">Select</option>
+                                                        <option value="Ist Year">Ist Semister</option>
+                                                        <option value="IInd Year">IInd Semister</option>
+                                                        <option value="IInd Year">IIInd Semister</option>
+                                                        <option value="IInd Year">IVth Semister</option>
+                                                    </select>
                                                 </div>
-                                                <div class="form-group col-lg-3">
-                                                    <label for="dept">Month:</label><span class="reqinput"></span>
-                                                    <asp:DropDownList ID="ddlmonth" runat="server" TabIndex="22" class="form-control inlineDisplay" Style="width: 180px">
-                                                        <asp:ListItem Text="None" Value="0"></asp:ListItem>
-                                                        <asp:ListItem Text="January" Value="1"></asp:ListItem>
-                                                        <asp:ListItem Text="February" Value="2"></asp:ListItem>
-                                                        <asp:ListItem Text="March" Value="3"></asp:ListItem>
-                                                        <asp:ListItem Text="April" Value="4"></asp:ListItem>
-                                                        <asp:ListItem Text="May" Value="5"></asp:ListItem>
-                                                        <asp:ListItem Text="June" Value="6"></asp:ListItem>
-                                                        <asp:ListItem Text="July" Value="7"></asp:ListItem>
-                                                        <asp:ListItem Text="August" Value="8"></asp:ListItem>
-                                                        <asp:ListItem Text="September" Value="9"></asp:ListItem>
-                                                        <asp:ListItem Text="October" Value="10"></asp:ListItem>
-                                                        <asp:ListItem Text="November" Value="11"></asp:ListItem>
-                                                        <asp:ListItem Text="December" Value="12"></asp:ListItem>
-                                                    </asp:DropDownList>
 
+                                                <div class="form-group col-lg-3">
+                                                    <label for="dept">Academic Fess Type:</label><span class="reqinput"></span>
+                                                    <select name="AcademicFeestype" id="AcademicFeestype" tabindex="19" class="form-control inlineDisplay" style="width: 200px;">
+                                                        <option selected="selected" value="">Select</option>
+                                                        <option value="Full Payment">Full Payment</option>
+                                                        <option value="Pending Payment">Pending Payment</option>
+                                                    </select>
                                                 </div>
-                                            </div>--%>
+
+                                            </div>
                                         </div>
                                         <%--<div>
                                                 <div class="form-group col-lg-12">
@@ -320,7 +284,7 @@
                                                 <asp:Button ID="btnsave" runat="server" Text="Save" TabIndex="31" class="btn btn-danger btnWidth" OnClick="btnsave_Click" />
                                                 <asp:Button ID="btncancel" runat="server" Text="Cancel" class="btn btn-primary btnWidth" formnovalidate="" />
                                             </div>
-                                          <%--  <asp:Label ID="Label6" runat="server" Text="Label6"></asp:Label>--%>
+                                            <asp:Label ID="Label6" runat="server" Text="Label6"></asp:Label>
                                         </div>
                                         <!-- /. box -->
 
@@ -332,11 +296,11 @@
                                 <div style="visibility: visible; opacity: 1; display: block; transform: translateY(0px);" data-widget-static="" class="panel panel-default" data-widget="{&quot;draggable&quot;: &quot;false&quot;}">
                                     <div class="panel-heading">
                                         <h2>Enquery Form Details</h2>
-                                        <div class=" col-md-3" style="float: right">
-                                            <%-- <label for="name">Search:</label>--%>
+                                        <%--<div class=" col-md-3" style="float: right">
+                                            <%-- <label for="name">Search:</label>
                                             <input name="ctl00$ContentPlaceHolder1$tbSearch" type="text" id="Text1" tabindex="32" class="form-control inlineDisplay" placeholder="Search" style="width: 180px;">
                                             <input type="image" name="ImageButton1" id="Image2" tabindex="33" class="imagebtn" formnovalidate="" src="../Img/search.png" style="height: 30px; width: 30px; position: relative; top: 7px">
-                                        </div>
+                                        </div>--%>
                                     </div>
                                     <div class="panel-heading">
                                     </div>
@@ -380,12 +344,12 @@
                                                                             </ItemTemplate>
                                                                         </asp:TemplateField>
 
-                                                                        <%--  <asp:TemplateField HeaderText="Gender">
-                                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                <ItemTemplate>
-                                                                    <%#Eval("Gender") %>
-                                                                </ItemTemplate>
-                                                            </asp:TemplateField>--%>
+                                                                        <asp:TemplateField HeaderText="Gender">
+                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
+                                                                            <ItemTemplate>
+                                                                                <%#Eval("Gender") %>
+                                                                            </ItemTemplate>
+                                                                        </asp:TemplateField>
 
                                                                         <asp:TemplateField HeaderText="Gender">
                                                                             <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
@@ -449,6 +413,7 @@
                                 </div>
                             </div>
 
+                            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="true"></asp:GridView>
                         </div>
                     </div>
                 </div>

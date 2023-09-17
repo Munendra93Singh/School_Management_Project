@@ -49,7 +49,7 @@ namespace School_Management_Project
             txtEdQu.Text = "";
             txtamount.Text = "";
         }
-
+      
 
         //public void Fill_State(DropDownList ddl)
         //{
@@ -109,6 +109,15 @@ namespace School_Management_Project
 
         protected void btnsave_Click(object sender, EventArgs e)
         {
+            String pass = "S023456789";
+            Random r = new Random();
+            char[] mypass = new char[10];
+            for (int i = 0; i < 10; i++)
+            {
+                mypass[i] = pass[(int)(10 * r.NextDouble())];
+            }
+            TextBox1.Text = "" + new string(mypass) + "";
+            //------------------------------
             con.Open();
             SqlCommand cmd = new SqlCommand("Sp_TBL_REGISTRATIONFORM_INSERT", con);
             cmd.CommandType = CommandType.StoredProcedure;
@@ -136,9 +145,10 @@ namespace School_Management_Project
             cmd.Parameters.AddWithValue("@STUDENT_ACHI_STATE", TextBox4.Text);            
             cmd.Parameters.AddWithValue("@STUDENT_EDUCATION_QUA", txtEdQu.Text);         
             cmd.Parameters.AddWithValue("@StudentFee", txtamount.Text);
+            cmd.Parameters.AddWithValue("@STUDENT_REG", TextBox1.Text);
             cmd.ExecuteNonQuery();
             {
-                string message = "Your Details have been saved successfully.";
+                string message = "Registration Application have been saved successfully Submited !!.";
                 string script = "window.onload = function(){ alert('";
                 script += message;
                 script += "')};";
@@ -148,17 +158,22 @@ namespace School_Management_Project
             con.Close();
         }
 
-        //protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (RadioButtonList1.SelectedValue == "yes")
-        //    {
-        //        RadioButtonList1.Visible = true;
-        //    }
-        //    else
-        //    {
-        //        RadioButtonList1.Visible = false;
-        //    }
-        //}
+        protected void RadioButtonList1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (RadioButtonList1.SelectedValue == "yes")
+            {
+                txtamount.Visible = true;
+            }
+            else
+            {
+                txtamount.Visible = false;
+            }
+        }
+
+        protected void grd_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+
+        }
     }
 }
 

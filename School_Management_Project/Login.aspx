@@ -146,13 +146,13 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:TextBox ID="txtemail" runat="server" class="user" placeholder="User Name" name="username" >
+                                    <asp:TextBox ID="txtemail" runat="server" class="user" placeholder="User Name" name="username" required="required">
                                     </asp:TextBox></td>
                             </tr>
 
                             <tr>
                                 <td>
-                                    <asp:TextBox ID="txtpass" runat="server" class="user" placeholder="User Password" name="userPass" TextMode="Password" ></asp:TextBox>
+                                    <asp:TextBox ID="txtpass" runat="server" class="user" placeholder="User Password" name="userPass" TextMode="Password" required="required"></asp:TextBox>
                                 </td>
                             </tr>
                             <tr>

@@ -227,14 +227,16 @@
                 <div class="logo-area">
                     <span id="trigger-sidebar" class="toolbar-trigger toolbar-icon-bg">
                         <a data-toggle="tooltips" data-placement="right" title="Toggle Sidebar">
-                            <span class="icon-bg">
+                            <span class="icon-bg">                                
                                 <i class="ti ti-menu"></i>
+                                <img src="Img/logo.jpg" style="height:10%; width:10%"/>
                             </span>
                         </a>
                     </span>
 
                     <a href="Dashboard.aspx">
-                        <h1 style="color: White; font-weight: bold; font-size: 20px;">COLLAGE MANAGEMENT 
+                                           
+                        <h1 style="color: White; font-weight: bold; font-size: 20px;">ISOMES 
                             &nbsp;</h1>
                     </a>
                   </div>
@@ -327,7 +329,7 @@
                                                 <ul class="acc-menu">
                                                    <li><a href="EnqForm.aspx">Student Enquiry</a></li>
                                                     <li><a href="RegistrationForm.aspx">Student Registration</a></li>
-                                                    <li><a href=".aspx">Student Admission</a></li>
+                                                    <li><a href="AdmissionForm.aspx">Student Admission</a></li>
                                                     <li><a href=".aspx">Fee Submission</a></li>
                                                     <%--<li><a href=".aspx">Search Student</a></li>--%>
                                                    <%-- <li><a href=".aspx">Promote Student</a></li>
@@ -410,7 +412,7 @@
                                 <div class="clearfix">
                                     <ul class="list-unstyled list-inline pull-left">
                                         <li>
-                                            <h6 style="margin: 0;">2023 © COLLAGE MANAGEMENT.
+                                            <h6 style="margin: 0;">2023 © ISOMES.
 			</h6>
                                         </li>
                                     </ul>

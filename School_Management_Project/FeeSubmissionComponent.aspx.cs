@@ -25,17 +25,7 @@ namespace School_Management_Project
             txtCompName.Text = "";
             txtamount.Text = "";
             txtdescription.Text = "";
-        }
-
-        //public void ClearControlls()
-        //{
-        //    ddlFyear.SelectedValue = "";
-        //    ddlFeeMode.SelectedValue = "";
-        //    txtCompName.Text = "";
-        //    txtamount.Text = "";
-        //    txtdescription.Text = "";
-
-        //}
+        }       
         //public void Fill_Grid()
         //{
         //    con.Open();

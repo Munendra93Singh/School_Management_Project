@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace School_Management_Project {
-    
-    
-    public partial class AdmissionForm {
-        
+namespace School_Management_Project
+{
+
+
+    public partial class AdmissionForm
+    {
+
         /// <summary>
         /// ddlFinyear control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlFinyear;
-        
+
         /// <summary>
         /// txtRollnumber control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtRollnumber;
-        
+
         /// <summary>
         /// txtstatus control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtstatus;
-        
+
         /// <summary>
         /// txtenrlonuber control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtenrlonuber;
-        
+
         /// <summary>
         /// txtmobile control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtmobile;
-        
+
         /// <summary>
         /// txtSname control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtSname;
-        
+
         /// <summary>
         /// txtfathername control.
         /// </summary>
@@ -74,7 +76,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtfathername;
-        
+
         /// <summary>
         /// txtmothername control.
         /// </summary>
@@ -83,7 +85,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtmothername;
-        
+
         /// <summary>
         /// ddlgender control.
         /// </summary>
@@ -92,7 +94,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlgender;
-        
+
         /// <summary>
         /// txtdob control.
         /// </summary>
@@ -101,7 +103,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtdob;
-        
+
         /// <summary>
         /// txtadharnumber control.
         /// </summary>
@@ -110,7 +112,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtadharnumber;
-        
+
         /// <summary>
         /// ddlreligion control.
         /// </summary>
@@ -119,7 +121,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlreligion;
-        
+
         /// <summary>
         /// ddlCategory control.
         /// </summary>
@@ -128,7 +130,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlCategory;
-        
+
         /// <summary>
         /// txtAdmDate control.
         /// </summary>
@@ -137,7 +139,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtAdmDate;
-        
+
         /// <summary>
         /// ddladdclas control.
         /// </summary>
@@ -146,7 +148,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddladdclas;
-        
+
         /// <summary>
         /// ddloccupation control.
         /// </summary>
@@ -155,7 +157,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddloccupation;
-        
+
         /// <summary>
         /// txtmaritalstatus control.
         /// </summary>
@@ -164,7 +166,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList txtmaritalstatus;
-        
+
         /// <summary>
         /// uploadimage control.
         /// </summary>
@@ -173,7 +175,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image uploadimage;
-        
+
         /// <summary>
         /// imgupload control.
         /// </summary>
@@ -182,7 +184,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload imgupload;
-        
+
         /// <summary>
         /// btn control.
         /// </summary>
@@ -191,7 +193,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn;
-        
+
         /// <summary>
         /// txtaddress control.
         /// </summary>
@@ -200,7 +202,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtaddress;
-        
+
         /// <summary>
         /// ddlstate control.
         /// </summary>
@@ -209,7 +211,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlstate;
-        
+
         /// <summary>
         /// ddlcity control.
         /// </summary>
@@ -218,7 +220,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlcity;
-        
+
         /// <summary>
         /// txtpincode control.
         /// </summary>
@@ -227,7 +229,25 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtpincode;
-        
+
+        /// <summary>
+        /// txtamount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtamount;
+
+        /// <summary>
+        /// ddlclassyear control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlclassyear;
+
         /// <summary>
         /// btnsave control.
         /// </summary>
@@ -236,7 +256,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnsave;
-        
+
         /// <summary>
         /// btncancel control.
         /// </summary>
@@ -245,7 +265,16 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btncancel;
-        
+
+        /// <summary>
+        /// Label6 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label6;
+
         /// <summary>
         /// grd control.
         /// </summary>
@@ -254,5 +283,14 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView grd;
+
+        /// <summary>
+        /// GridView2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView2;
     }
 }

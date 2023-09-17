@@ -163,7 +163,7 @@
                 </div>
             </div>
 
-            <div class="col-sm-4 col-md-2">
+            <%--<div class="col-sm-4 col-md-2">
                 <h4 class="text-center"></h4>
                 <div class="color-palette-set">
                     <a href="#">
@@ -174,7 +174,7 @@
                             Archive Records
                         </span></a>
                 </div>
-            </div>
+            </div>--%>
 
         </div>
         <br />

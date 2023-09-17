@@ -158,6 +158,7 @@
     <Content Include="Dashboard.aspx" />
     <Content Include="EnqForm.aspx" />
     <Content Include="FeeSubmissionComponent.aspx" />
+    <Content Include="Img\logo.jpg" />
     <Content Include="Img\delete.jpg" />
     <Content Include="Img\Delete.png" />
     <Content Include="Img\dlt.png" />
@@ -167,6 +168,7 @@
     <Content Include="Img\icon-update.png" />
     <Content Include="Img\MAHI.jpg" />
     <Content Include="Img\search.png" />
+    <Content Include="Login.aspx" />
     <Content Include="login\font-awesome.min.css" />
     <Content Include="login\img\admin.png" />
     <Content Include="login\img\bg-1.jpg" />
@@ -261,6 +263,13 @@
     </Compile>
     <Compile Include="FeeSubmissionComponent.aspx.designer.cs">
       <DependentUpon>FeeSubmissionComponent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
