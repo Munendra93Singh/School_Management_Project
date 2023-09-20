@@ -314,14 +314,14 @@
 
                                             <li><a href="javascript:;"><i class="fa fa-user"></i><span>Master</span></a>
                                                 <ul class="acc-menu">
-                                                    <li><a href="FeeSubmissionComponent.aspx">Fee Component</a></li>
-                                                    <li><a href=".aspx">Class Details</a></li>
+                                                    <li><a href="FeeComponent.aspx">Fee Component</a></li>
+                                                    <li><a href="AddClass.aspx">Class Details</a></li>
                                                     <li><a href=".aspx">Exense Category</a></li>
                                                     <li><a href=".aspx">Fee Submission</a></li>
-                                                  <%--  <li><a href=".aspx">Add/Modify Reference</a></li>
-                                                    <li><a href="City.aspx">City Details</a></li>
+                                                  <%--  <li><a href=".aspx">Add/Modify Reference</a></li>--%>                                                    
                                                     <li><a href="State.aspx">State Details</a></li>
-                                                    <li><a href=".aspx">College/School Details</a></li>
+                                                    <li><a href="City.aspx">City Details</a></li>
+                                                   <%-- <li><a href=".aspx">College/School Details</a></li>
                                                     <li><a href="SendMsg.aspx">Send SMS</a></li>--%>
                                                 </ul>
                                             </li>

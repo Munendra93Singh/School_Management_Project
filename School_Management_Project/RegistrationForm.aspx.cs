@@ -109,14 +109,14 @@ namespace School_Management_Project
 
         protected void btnsave_Click(object sender, EventArgs e)
         {
-            String pass = "S023456789";
-            Random r = new Random();
-            char[] mypass = new char[10];
-            for (int i = 0; i < 10; i++)
-            {
-                mypass[i] = pass[(int)(10 * r.NextDouble())];
-            }
-            TextBox1.Text = "" + new string(mypass) + "";
+            //String pass = "S023456789";
+            //Random r = new Random();
+            //char[] mypass = new char[10];
+            //for (int i = 0; i < 10; i++)
+            //{
+            //    mypass[i] = pass[(int)(10 * r.NextDouble())];
+            //}
+            //TextBox1.Text = "" + new string(mypass) + "";
             //------------------------------
             con.Open();
             SqlCommand cmd = new SqlCommand("Sp_TBL_REGISTRATIONFORM_INSERT", con);

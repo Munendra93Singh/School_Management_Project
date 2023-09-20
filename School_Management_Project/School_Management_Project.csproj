@@ -157,7 +157,7 @@
     <Content Include="css\text.css" />
     <Content Include="Dashboard.aspx" />
     <Content Include="EnqForm.aspx" />
-    <Content Include="FeeSubmissionComponent.aspx" />
+    <Content Include="FeeComponent.aspx" />
     <Content Include="Img\logo.jpg" />
     <Content Include="Img\delete.jpg" />
     <Content Include="Img\Delete.png" />
@@ -257,12 +257,12 @@
     <Compile Include="EnqForm.aspx.designer.cs">
       <DependentUpon>EnqForm.aspx</DependentUpon>
     </Compile>
-    <Compile Include="FeeSubmissionComponent.aspx.cs">
-      <DependentUpon>FeeSubmissionComponent.aspx</DependentUpon>
+    <Compile Include="FeeComponent.aspx.cs">
+      <DependentUpon>FeeComponent.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="FeeSubmissionComponent.aspx.designer.cs">
-      <DependentUpon>FeeSubmissionComponent.aspx</DependentUpon>
+    <Compile Include="FeeComponent.aspx.designer.cs">
+      <DependentUpon>FeeComponent.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

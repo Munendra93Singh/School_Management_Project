@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace School_Management_Project {
-    
-    
-    public partial class City {
-        
+namespace School_Management_Project
+{
+
+
+    public partial class City
+    {
+
         /// <summary>
         /// ddlState control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlState;
-        
+
         /// <summary>
         /// txtcity control.
         /// </summary>
@@ -29,25 +31,25 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtcity;
-        
+
         /// <summary>
-        /// Button1 control.
+        /// btnsave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
+        protected global::System.Web.UI.WebControls.Button btnsave;
+
         /// <summary>
-        /// btncancel control.
+        /// btnCacel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btncancel;
-        
+        protected global::System.Web.UI.WebControls.Button btnCacel;
+
         /// <summary>
         /// grd control.
         /// </summary>

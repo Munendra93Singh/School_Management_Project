@@ -15,15 +15,15 @@ namespace School_Management_Project
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+
             if (!IsPostBack)
             {
                 Fill_Country(ddlState);
-                Fill_Grid();
-             
             }
+            Fill_Grid();
+
         }
-        
+
 
         public void Fill_Grid()
         {
@@ -66,7 +66,7 @@ namespace School_Management_Project
                 ddl.DataTextField = "State_Name";
                 ddl.DataSource = ds;
                 ddl.DataBind();
-                ddl.Items.Insert(0, new ListItem("--Select--", "0"));
+                ddl.Items.Insert(0, new ListItem("SELECT", "0"));
             }
             else
             {
@@ -74,23 +74,25 @@ namespace School_Management_Project
                 ddl.DataBind();
             }
             con.Close();
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("sp_TBL_City", con);
+            SqlCommand cmd = new SqlCommand("sp_TBL_City_insert", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@State_Name",ddlState.SelectedValue);
             cmd.Parameters.AddWithValue("@City_Name", txtcity.Text);
             cmd.ExecuteNonQuery();
             con.Close();
+            Fill_Grid();
         }
 
         protected void grd_RowCommand(object sender, GridViewCommandEventArgs e)
         {
 
         }
-              
+
     }
 }

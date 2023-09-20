@@ -273,14 +273,14 @@ namespace School_Management_Project
             // }
             //  public void savedata()
 
-            //String pass = "S023456789";
-            //Random r = new Random();
-            //char[] mypass = new char[10];
-            //for (int i = 0; i < 10; i++)
-            //{
-            //    mypass[i] = pass[(int)(10 * r.NextDouble())];
-            //}
-            //txtRollnumber.Text = "" + new string(mypass) + "";
+            String pass = "S023456789";
+            Random r = new Random();
+            char[] mypass = new char[10];
+            for (int i = 0; i < 10; i++)
+            {
+                mypass[i] = pass[(int)(10 * r.NextDouble())];
+            }
+            txtRollnumber.Text = "" + new string(mypass) + "";
           //  Label = "" + new string(mypass) + "";
             string load = "";
             if (btnsave.Text == "Save")

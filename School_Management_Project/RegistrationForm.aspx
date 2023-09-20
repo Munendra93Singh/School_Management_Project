@@ -72,7 +72,7 @@
                                                         <asp:ListItem Text="2024-2025" Value="2024-2025"></asp:ListItem>
                                                     </asp:DropDownList>
                                                 </div>
-                                                 <div class="form-group col-lg-3" hidden="hidden">
+                                                <div class="form-group col-lg-3" hidden="hidden">
                                                     <label for="dept">Regi Number:</label><span class="reqinput"></span>
                                                     <asp:TextBox ID="TextBox1" runat="server" TabIndex="1" class="form-control  inlineDisplay" placeholder="Full Name" size="40"></asp:TextBox>
                                                 </div>
@@ -168,14 +168,7 @@
                                                         <asp:TextBox ID="txtnationality" runat="server" TabIndex="2" class="form-control inlineDisplay " placeholder="Father Name" size="40" required=""></asp:TextBox>
 
                                                     </div>
-                                                    <%--  <div class="form-group col-lg-3">
-                                                        <label for="dept">Proficiency in Language:</label><span class="reqinput"></span>
-                                                       <asp:CheckBoxList ID="chkLanguages" runat="server">
-                                                            <asp:ListItem Text="Hindi" Value="Hindi" />
-                                                              <asp:ListItem Text="English" Value="English" />                                                              
-                                                                 <asp:ListItem Text="Other" Value="Other" />                                                                   
-                                                               </asp:CheckBoxList>
-                                                    </div>--%>
+                                                 
                                                 </div>
                                                 <div class="form-group col-lg-3">
                                                     <label for="dept">Edcutional Qualification:</label>
@@ -238,14 +231,14 @@
                                                                         <asp:ListItem Value="yes">Yes</asp:ListItem>
                                                                         <asp:ListItem Value="no">No</asp:ListItem>
                                                                     </asp:RadioButtonList>
-                                                                </tr>                                                                
+                                                                </tr>
                                                             </tbody>
                                                         </table>
                                                     </div>
-                                                   <div class="form-group col-lg-2">
+                                                    <div class="form-group col-lg-2">
                                                         <label for="dept">Reg.Fees:</label><span class="reqinput"></span>
                                                         <asp:TextBox ID="txtamount" runat="server" TextMode="Number" TabIndex="22" class="form-control inlineDisplay" placeholder="Reg. Fees" required="" Style="width: 80%"></asp:TextBox>
-                                                  </div>
+                                                    </div>
                                                 </div>
 
 
@@ -272,106 +265,11 @@
                                     </div>
                                 </div>
                                 <!-- /.row -->
-                                <div class="panel-body">
-                                        <div class="form-horizontal row-border">
-                                            <div class="widget-content no-padding">
-                                                <section class="abt">
-                                                    <div style="height: 200px; overflow: auto;">
-                                                        <table style="background-color: white">
-                                                            <table class="TableCSS table-bordered">
-                                                                <asp:GridView ID="grd" runat="server" AutoGenerateColumns="false" OnRowCommand="grd_RowCommand" BorderWidth="1" EmptyDataText="There are no data records to display." BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" ForeColor="Black" GridLines="Vertical" CssClass="table ">
-                                                                    <RowStyle BorderWidth="1" BorderColor="Black" />
-                                                                    <AlternatingRowStyle BackColor="White" />
-                                                                    <%--<Columns>
-                                                                        <asp:TemplateField HeaderText="Photo">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <asp:Image ID="Image1" runat="server" ImageUrl='<%#Eval("imageupload","~/FIleImage/{0}") %>' Width="100px" Height="60px" />
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        <asp:TemplateField HeaderText="Ragistration No.">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("Ragnumber") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        <asp:TemplateField HeaderText="Name">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("Studntname") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        <asp:TemplateField HeaderText="Father Name">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("fathername") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        <asp:TemplateField HeaderText="Gender">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("Gender") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        <asp:TemplateField HeaderText="Gender">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("Gender") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-
-                                                                        <asp:TemplateField HeaderText="Status">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("Mariedstatus") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        <asp:TemplateField HeaderText="Birth">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("DOB") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        <asp:TemplateField HeaderText="Class">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("Class") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        <asp:TemplateField HeaderText="Address">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("Address") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        
-
-                                                                       
-
-                                                                    </Columns>--%>
-                                                                </asp:GridView>
-                                                            </table>
-                                                        </table>
-                                                    </div>
-                                                </section>
-                                            </div>
-                                        </div>
-                                    </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 </asp:Content>

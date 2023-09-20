@@ -57,7 +57,7 @@ namespace School_Management_Project
         protected void Button1_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("sp_TBL_State", con);
+            SqlCommand cmd = new SqlCommand("sp_TBL_State_insert", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@State_Name", txtstatname.Text);
             cmd.ExecuteNonQuery();

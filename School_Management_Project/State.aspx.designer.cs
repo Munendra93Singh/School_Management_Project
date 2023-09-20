@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace School_Management_Project {
-    
-    
-    public partial class State {
-        
+namespace School_Management_Project
+{
+
+
+    public partial class State
+    {
+
         /// <summary>
         /// txtstatname control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtstatname;
-        
+
         /// <summary>
         /// Button1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-        
+
         /// <summary>
         /// btncancel control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btncancel;
-        
+
         /// <summary>
         /// grd control.
         /// </summary>

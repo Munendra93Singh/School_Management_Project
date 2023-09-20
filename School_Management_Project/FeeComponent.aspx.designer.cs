@@ -11,7 +11,7 @@ namespace School_Management_Project
 {
 
 
-    public partial class AddClass
+    public partial class FeeSubmissionComponent
     {
 
         /// <summary>
@@ -24,22 +24,22 @@ namespace School_Management_Project
         protected global::System.Web.UI.WebControls.DropDownList ddlFyear;
 
         /// <summary>
-        /// ddlclass control.
+        /// txtCompName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlclass;
+        protected global::System.Web.UI.WebControls.TextBox txtCompName;
 
         /// <summary>
-        /// ddlyear control.
+        /// ddlFeeMode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlyear;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFeeMode;
 
         /// <summary>
         /// txtamount control.
@@ -58,6 +58,15 @@ namespace School_Management_Project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtdescription;
+
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
         /// btnsave control.
