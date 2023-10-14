@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace School_Management_Project {
-    
-    
-    public partial class Waytoemail {
-        
+namespace School_Management_Project
+{
+
+
+    public partial class Waytoemail
+    {
+
         /// <summary>
         /// txtemailfrom control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtemailfrom;
-        
+
         /// <summary>
         /// txtemailto control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtemailto;
-        
+
         /// <summary>
         /// txtsubject control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtsubject;
-        
+
         /// <summary>
         /// Button1 control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button1;
-        
+
         /// <summary>
         /// uploadfile control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.FileUpload uploadfile;
-        
+
         /// <summary>
         /// txtdescription control.
         /// </summary>
@@ -65,7 +67,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtdescription;
-        
+
         /// <summary>
         /// status control.
         /// </summary>
@@ -74,5 +76,14 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label status;
+
+        /// <summary>
+        /// grd control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView grd;
     }
 }

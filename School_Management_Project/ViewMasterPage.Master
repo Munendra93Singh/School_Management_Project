@@ -21,6 +21,7 @@
     <link href="assets/css/Style2.css" rel="stylesheet" />
     <link href="assets/css/styles.css" rel="stylesheet" />
     <link href="assets/css/msc.css" rel="stylesheet" />
+    <link href="assets/css/css1.css" rel="stylesheet" />
     <!-- Core CSS with all styles -->
     <link href="assets/plugins/codeprettifier/prettify.css" rel="stylesheet" />
     <!-- Code Prettifier -->
@@ -316,8 +317,7 @@
                                                 <ul class="acc-menu">
                                                     <li><a href="FeeComponent.aspx">Fee Component</a></li>
                                                     <li><a href="AddClass.aspx">Class Details</a></li>
-                                                    <li><a href=".aspx">Exense Category</a></li>
-                                                    <li><a href=".aspx">Fee Submission</a></li>
+                                                    <li><a href="AddYearCat.aspx">Exense Category</a></li>                                                    
                                                   <%--  <li><a href=".aspx">Add/Modify Reference</a></li>--%>                                                    
                                                     <li><a href="State.aspx">State Details</a></li>
                                                     <li><a href="City.aspx">City Details</a></li>
@@ -330,7 +330,7 @@
                                                    <li><a href="EnqForm.aspx">Student Enquiry</a></li>
                                                     <li><a href="RegistrationForm.aspx">Student Registration</a></li>
                                                     <li><a href="AdmissionForm.aspx">Student Admission</a></li>
-                                                    <li><a href=".aspx">Fee Submission</a></li>
+                                                    <li><a href="FeeSubmission.aspx">Fee Submission</a></li>
                                                     <%--<li><a href=".aspx">Search Student</a></li>--%>
                                                    <%-- <li><a href=".aspx">Promote Student</a></li>
                                                     <li><a href=".aspx">Document Upload</a></li>

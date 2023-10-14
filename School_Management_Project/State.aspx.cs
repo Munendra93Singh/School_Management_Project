@@ -31,20 +31,21 @@ namespace School_Management_Project
         public void Fill_Grid()
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("sp_TBL_State_get", con);
+            SqlCommand cmd = new SqlCommand("sp_TBL_State", con);
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@action", "show");
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
             {
-                grd.DataSource = ds;
-                grd.DataBind();
+                ListView1.DataSource = ds;
+                ListView1.DataBind();
             }
             else
             {
-                grd.DataSource = null;
-                grd.DataBind();
+                ListView1.DataSource = null;
+                ListView1.DataBind();
             }
             con.Close();
         }
@@ -57,8 +58,9 @@ namespace School_Management_Project
         protected void Button1_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("sp_TBL_State_insert", con);
+            SqlCommand cmd = new SqlCommand("sp_TBL_State", con);
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@action", "insert");
             cmd.Parameters.AddWithValue("@State_Name", txtstatname.Text);
             cmd.ExecuteNonQuery();
             con.Close();

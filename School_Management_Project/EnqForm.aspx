@@ -15,15 +15,7 @@
                 });
         });
     </script>
-    <%--<script type="text/javascript">
-        $(function () {
-            $("[id*=txtdob]").datepicker({
-                showOn: 'button',
-                buttonImageOnly: true,
-                buttonImage: 'images/calendar.png'
-            });
-        });
-    </script>--%>
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="wrapper">
@@ -153,98 +145,17 @@
                                                 </div>
 
                                                 <div class="form-group col-lg-6">
-                                                    <%-- <table>
-                                                        <tr><lebal for="dept">Confirmation-1</lebal>
-                                                            <td><asp:RadioButtonList ID="rdbtn" runat="server" RepeatColumns="2">
-                                                                    <asp:ListItem Text="Yes" Value="Yes"></asp:ListItem>
-                                                                    <asp:ListItem Text="No" Value="No"></asp:ListItem>
-                                                                </asp:RadioButtonList></td>
-                                                        </tr>
-                                                    </table>
-                                                    <table>
-                                                         <tr><lebal for="dept">Confirmation-2</lebal>
-                                                            <td><asp:RadioButtonList ID="rdbtn2" runat="server" RepeatColumns="2">
-                                                                    <asp:ListItem Text="Yes" Value="Yes"></asp:ListItem>
-                                                                    <asp:ListItem Text="No" Value="No"></asp:ListItem>
-                                                                </asp:RadioButtonList></td>
-                                                        </tr>
-                                                    </table>--%>
-                                                    <table>
-                                                        <tr>
-                                                            <td></td>
-                                                            <td>
-                                                                <asp:Button ID="btnsave" runat="server" Text="Submit" TabIndex="19" class="btn btn-primary btnWidth" OnClick="btnsave_Click" />
-                                                                <%--<td><asp:Button ID="btnsave" runat="server" Text="Submit" TabIndex="19" class="btn btn-primary btnWidth"/>--%>
-                                                                <asp:Button ID="btnCacel" runat="server" Text="Cancel" class="btn btn-danger btnWidth" formnovalidate="" />
-                                                            </td>
-                                                        </tr>
-                                                    </table>
+                                                    <asp:Button ID="btnsave" runat="server" Text="Submit" TabIndex="19" class="btn btn-danger btnWidth" OnClick="btnsave_Click" />
+                                                    <asp:Button ID="btnCacel" runat="server" Text="Cancel" class="btn btn-primary btnWidth" formnovalidate="" />
                                                 </div>
-                                                <div class="form-group col-lg-6">
 
+                                                <div class="form-group col-lg-6">
                                                     <label for="dept">Address:</label><span class="reqinput"></span>
                                                     <asp:TextBox ID="txtaddres" runat="server" Height="80px" Width="470px" TextMode="MultiLine"></asp:TextBox>
-                                                    <%-- <textarea id="txtaddres" runat="server" rows="2" cols="20" tabindex="14" class="form-control inlineDisplay" placeholder="Address" required="" style="height: 100px; width: 100%"></textarea>
-                                                    <textarea name="ctl00$ContentPlaceHolder1$txtAddress" rows="2" cols="20" id="ContentPlaceHolder1_txtAddress" tabindex="14" class="form-control inlineDisplay" placeholder="Address" required="" style="height: 100px; width: 100%;"></textarea>--%>
                                                 </div>
                                                 <div class="col-lg-12">
                                                     <label for="dept"></label>
                                                 </div>
-                                                <%--<div id="ContentPlaceHolder1_UpdatePanel2">
-                                                    <div class="form-group col-lg-4" hidden="hidden">
-                                                        <label for="dept">Registered in Govt. ITI?</label>
-                                                        <table id="ContentPlaceHolder1_rbIsGovtReg" class="RBL">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        <input id="ContentPlaceHolder1_rbIsGovtReg_0" type="radio" name="ctl00$ContentPlaceHolder1$rbIsGovtReg" value="Yes" onclick="javascript: setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$rbIsGovtReg$0\',\'\')', 0)" tabindex="119"><label for="ContentPlaceHolder1_rbIsGovtReg_0">Yes</label></td>
-                                                                    <td>
-                                                                        <input id="ContentPlaceHolder1_rbIsGovtReg_1" type="radio" name="ctl00$ContentPlaceHolder1$rbIsGovtReg" value="No" checked="checked" tabindex="119"><label for="ContentPlaceHolder1_rbIsGovtReg_1">No</label></td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="form-group col-lg-4" hidden="hidden">
-                                                        <label for="dept">Getting Any Scholarship from Govt.?</label>
-                                                        <table id="ContentPlaceHolder1_rbScholarship" class="RBL">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        <input id="ContentPlaceHolder1_rbScholarship_0" type="radio" name="ctl00$ContentPlaceHolder1$rbScholarship" value="Yes" onclick="javascript: setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$rbScholarship$0\',\'\')', 0)" tabindex="120"><label for="ContentPlaceHolder1_rbScholarship_0">Yes</label></td>
-                                                                    <td>
-                                                                        <input id="ContentPlaceHolder1_rbScholarship_1" type="radio" name="ctl00$ContentPlaceHolder1$rbScholarship" value="No" checked="checked" tabindex="120"><label for="ContentPlaceHolder1_rbScholarship_1">No</label></td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div class="form-group col-lg-4" hidden="hidden">
-                                                        <label for="dept">Anyone known studied in this college:</label>
-                                                        <table id="ContentPlaceHolder1_rbAlumni" class="RBL">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        <input id="ContentPlaceHolder1_rbAlumni_0" type="radio" name="ctl00$ContentPlaceHolder1$rbAlumni" value="Yes" onclick="javascript: setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$rbAlumni$0\',\'\')', 0)" tabindex="121"><label for="ContentPlaceHolder1_rbAlumni_0">Yes</label></td>
-                                                                    <td>
-                                                                        <input id="ContentPlaceHolder1_rbAlumni_1" type="radio" name="ctl00$ContentPlaceHolder1$rbAlumni" value="No" checked="checked" tabindex="121"><label for="ContentPlaceHolder1_rbAlumni_1">No</label></td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-                                                    <div id="ContentPlaceHolder1_dvgvtRegNo" class="form-group col-lg-4" hidden="hidden">
-                                                        <label for="dept">Govt ITI Registration No.:</label>
-                                                        <input name="ctl00$ContentPlaceHolder1$txtGovtRegnum" type="text" readonly="readonly" id="ContentPlaceHolder1_txtGovtRegnum" tabindex="122" class="form-control inlineDisplay" placeholder="Govt. ITI Reg. Number" style="width: 100%;">
-                                                    </div>
-                                                    <div id="ContentPlaceHolder1_dvScholarshipDetail" class="form-group col-lg-4" hidden="hidden">
-                                                        <label for="dept">Govt. Scholarship Details:</label>
-                                                        <input name="ctl00$ContentPlaceHolder1$txtScholarship" type="text" readonly="readonly" id="ContentPlaceHolder1_txtScholarship" tabindex="123" class="form-control inlineDisplay" placeholder="Govt. Scholarship Details" style="width: 100%;">
-                                                    </div>
-                                                    <div id="ContentPlaceHolder1_Div1" class="form-group col-lg-4" hidden="hidden">
-                                                        <label for="dept">Known Person Details:</label>
-                                                        <input name="ctl00$ContentPlaceHolder1$txtAlumni" type="text" readonly="readonly" id="ContentPlaceHolder1_txtAlumni" tabindex="124" class="form-control inlineDisplay" placeholder="Known Person Details" style="width: 100%;">
-                                                    </div>
-
-
-                                                </div>--%>
                                             </div>
                                             <!-- /.box-body -->
                                             <div id="ContentPlaceHolder1_lv" style="color: black">
@@ -257,130 +168,150 @@
                                 </div>
                             </div>
                             <!-- /.row -->
-
                             <div class="container-fluid">
                                 <div style="visibility: visible; opacity: 1; display: block; transform: translateY(0px);" data-widget-static="" class="panel panel-default" data-widget="{&quot;draggable&quot;: &quot;false&quot;}">
                                     <div class="panel-heading">
-                                        <h2>Enquery Form Details</h2>
+                                        <h2>Component Details</h2>
+                                        <div class=" col-md-3" style="float: right">
+                                            <input name="ctl00$ContentPlaceHolder1$tbSearch" type="text" id="Text1" tabindex="32" class="form-control inlineDisplay" placeholder="Search" style="width: 180px;" />
+                                            <input type="image" name="ImageButton1" id="Image2" tabindex="33" class="imagebtn" formnovalidate="" src="../Img/search.png" style="height: 30px; width: 30px; position: relative; top: 7px" />
+                                        </div>
+                                        <div class="panel-heading">
+                                        </div>
                                     </div>
                                     <div class="panel-editbox" data-widget-controls=""></div>
                                     <div class="panel-body">
-                                        <div class="form-horizontal row-border">
-                                            <div class="widget-content no-padding">
-                                                <div class="container">
-                                                    <section class="abt">
-                                                        <div style="width: 980px; height: 400px; overflow: auto;">
-                                                            <table style="background-color: white">
-                                                                <table class="TableCSS table-bordered">
-                                                                    <asp:GridView ID="grd" runat="server" AutoGenerateColumns="false" OnRowCommand="grd_RowCommand" BorderWidth="1" EmptyDataText="There are no data records to display." BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" ForeColor="Black" GridLines="Vertical" CssClass="table ">
-                                                                        <RowStyle BorderWidth="1" BorderColor="Black" />
-                                                                        <AlternatingRowStyle BackColor="White" />
-                                                                        <Columns>
-                                                                            <asp:TemplateField HeaderText="Full Name">
-                                                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                                <ItemTemplate>
-                                                                                    <%#Eval("FullName") %>
-                                                                                </ItemTemplate>
-                                                                            </asp:TemplateField>
+                                        <div style="height: 230px; overflow: auto">
+                                            <table style="background-color: white">
+                                                <asp:ListView ID="ListView1" runat="server">
+                                                    <LayoutTemplate>
+                                                        <table class="TableCSS table-bordered">
+                                                            <tr class="TableHeader">
+                                                                <td>Edit</td>
+                                                                <td>Delete</td>
+                                                                <td>Full Name</td>
+                                                                <td>Father Name</td>
+                                                                <td>DOB</td>
+                                                                <td>Mobile</td>
+                                                                <td>Gender</td>
+                                                                <td>Class</td>
+                                                                <td>Email I'd</td>
+                                                                <td>Qualification</td>
+                                                                <td>Address</td>
+                                                            </tr>
+                                                            <tbody>
+                                                                <asp:PlaceHolder ID="itemPlaceHolder" runat="server" />
+                                                            </tbody>
+                                                        </table>
+                                                    </LayoutTemplate>
+                                                    <ItemTemplate>
+                                                        <tr class="TableData">
+                                                            <td>
+                                                                <a href='Writereaddata/<%# Eval("ENQ_ID") %>' target="_blank">
+                                                                    <asp:Image ID="pdfimg" runat="server" ImageUrl="~/Img/edit.png" Height="25px" Width="29px" />
+                                                                </a>
+                                                            </td>
+                                                            <td>
+                                                                <a href='Writereaddata/<%# Eval("ENQ_ID") %>' target="_blank">
+                                                                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Img/delete.jpg" Height="25px" Width="29px" />
+                                                                </a>
+                                                            </td>
+                                                            <td>
+                                                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("FullName")%>'>   
+                                                                </asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:Label ID="Label2" runat="server" Text='<%# Eval("FatherName")%>'>   
+                                                                </asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:Label ID="Label3" runat="server" Text='<%# Eval("Sdob")%>'>   
+                                                                </asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:Label ID="Label4" runat="server" Text='<%# Eval("Mobile")%>'>   
+                                                                </asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:Label ID="Label5" runat="server" Text='<%# Eval("Gender")%>'>   
+                                                                </asp:Label>
+                                                            </td>
 
-                                                                            <asp:TemplateField HeaderText="Father Name">
-                                                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                                <ItemTemplate>
-                                                                                    <%#Eval("FatherName") %>
-                                                                                </ItemTemplate>
-                                                                            </asp:TemplateField>
+                                                            <td>
+                                                                <asp:Label ID="Label6" runat="server" Text='<%# Eval("Class")%>'>   
+                                                                </asp:Label>
+                                                            </td>
 
-                                                                           <%-- <asp:TemplateField HeaderText="DOB" hidden="hidden">
-                                                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                                <ItemTemplate>
-                                                                                    <%#Eval("Sdob") %>
-                                                                                </ItemTemplate>
-                                                                            </asp:TemplateField>--%>
+                                                            <td>
+                                                                <asp:Label ID="Label7" runat="server" Text='<%# Eval("Email")%>'>   
+                                                                </asp:Label>
+                                                            </td>
 
-                                                                            <asp:TemplateField HeaderText="Mobile">
-                                                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                                <ItemTemplate>
-                                                                                    <%#Eval("Mobile") %>
-                                                                                </ItemTemplate>
-                                                                            </asp:TemplateField>
+                                                            <td>
+                                                                <asp:Label ID="Label8" runat="server" Text='<%# Eval("Qualification")%>'>   
+                                                                </asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:Label ID="Label9" runat="server" Text='<%# Eval("Address")%>'>   
+                                                                </asp:Label>
+                                                            </td>
+                                                        </tr>
+                                                    </ItemTemplate>
+                                                    <AlternatingItemTemplate>
+                                                        <tr class="TableData" style="background-color: #dadada;">
+                                                            <td>
+                                                                <a href='Writereaddata/<%# Eval("FEE_ID") %>' target="_blank">
+                                                                    <asp:Image ID="pdfimg" runat="server" ImageUrl="~/Img/edit.png" Height="25px" Width="29px" />
+                                                                </a>
+                                                            </td>
+                                                            <td>
+                                                                <a href='Writereaddata/<%# Eval("FEE_ID") %>' target="_blank">
+                                                                    <asp:Image ID="Image1" runat="server" ImageUrl="~/Img/delete.jpg" Height="25px" Width="29px" />
+                                                                </a>
+                                                            </td>
+                                                            <td>
+                                                                <asp:Label ID="Label1" runat="server" Text='<%# Eval("FullName")%>'>   
+                                                                </asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:Label ID="Label2" runat="server" Text='<%# Eval("FatherName")%>'>   
+                                                                </asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:Label ID="Label3" runat="server" Text='<%# Eval("Sdob")%>'>   
+                                                                </asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:Label ID="Label4" runat="server" Text='<%# Eval("Mobile")%>'>   
+                                                                </asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:Label ID="Label5" runat="server" Text='<%# Eval("Gender")%>'>   
+                                                                </asp:Label>
+                                                            </td>
 
-                                                                            <asp:TemplateField HeaderText="Gender">
-                                                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                                <ItemTemplate>
-                                                                                    <%#Eval("Gender") %>
-                                                                                </ItemTemplate>
-                                                                            </asp:TemplateField>
+                                                            <td>
+                                                                <asp:Label ID="Label6" runat="server" Text='<%# Eval("Class")%>'>   
+                                                                </asp:Label>
+                                                            </td>
 
-                                                                          <%--  <asp:TemplateField HeaderText="Category" hidden="hidden">
-                                                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                                <ItemTemplate>
-                                                                                   <%-- <%#Eval("Category") %>--
-                                                                                </ItemTemplate>
-                                                                            </asp:TemplateField>--%>
+                                                            <td>
+                                                                <asp:Label ID="Label7" runat="server" Text='<%# Eval("Email")%>'>   
+                                                                </asp:Label>
+                                                            </td>
 
-                                                                            <asp:TemplateField HeaderText="Class">
-                                                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                                <ItemTemplate>
-                                                                                    <%#Eval("Class") %>
-                                                                                </ItemTemplate>
-                                                                            </asp:TemplateField>
-
-                                                                           <%-- <asp:TemplateField HeaderText="Pin Code" hidden="hidden">
-                                                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                                <ItemTemplate>
-                                                                                  <%--  <%#Eval("PinCode") %>--
-                                                                                </ItemTemplate>
-                                                                            </asp:TemplateField>--%>
-
-                                                                            <asp:TemplateField HeaderText="Email I'd">
-                                                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                                <ItemTemplate>
-                                                                                    <%#Eval("Email") %>
-                                                                                </ItemTemplate>
-                                                                            </asp:TemplateField>
-
-                                                                            <asp:TemplateField HeaderText="Qualification">
-                                                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                                <ItemTemplate>
-                                                                                   <%#Eval("Qualification") %>
-                                                                                </ItemTemplate>
-                                                                            </asp:TemplateField>
-
-                                                                            <asp:TemplateField HeaderText="Address">
-                                                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                                <ItemTemplate>
-                                                                                    <%#Eval("Address") %>
-                                                                                </ItemTemplate>
-                                                                            </asp:TemplateField>
-
-
-                                                                            <asp:TemplateField HeaderText="Edit">
-                                                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                                <ItemTemplate>
-                                                                                    <asp:LinkButton ID="imgbtnEdit" runat="server" CommandName="Edit" ImageUrl="~/Img/icon-edit.png" />
-                                                                                </ItemTemplate>
-                                                                                <EditItemTemplate>
-                                                                                    <asp:LinkButton ID="imgbtnUpdate" runat="server" CommandName="Update" ImageUrl="~/Img/icon-update.png" />
-                                                                                </EditItemTemplate>
-                                                                            </asp:TemplateField>
-
-                                                                            <asp:TemplateField HeaderText="Delete">
-                                                                                <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                                <ItemTemplate>
-                                                                                    <asp:LinkButton ID="imgbtnEdit" runat="server" CommandName="Edit" ImageUrl="~/Img/Delete.png" />
-                                                                                </ItemTemplate>
-                                                                                <EditItemTemplate>
-                                                                                    <asp:LinkButton ID="imgbtnUpdate" runat="server" CommandName="Update" ImageUrl="~/Img/icon-Cancel.png" />
-                                                                                </EditItemTemplate>
-                                                                            </asp:TemplateField>
-                                                                        </Columns>
-                                                                    </asp:GridView>
-                                                                </table>
-                                                            </table>
-                                                        </div>
-                                                    </section>
-                                                </div>
-                                            </div>
+                                                            <td>
+                                                                <asp:Label ID="Label8" runat="server" Text='<%# Eval("Qualification")%>'>   
+                                                                </asp:Label>
+                                                            </td>
+                                                            <td>
+                                                                <asp:Label ID="Label9" runat="server" Text='<%# Eval("Address")%>'>   
+                                                                </asp:Label>
+                                                            </td>
+                                                        </tr>
+                                                    </AlternatingItemTemplate>
+                                                </asp:ListView>
+                                            </table>
                                         </div>
                                     </div>
                                 </div>

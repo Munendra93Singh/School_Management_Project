@@ -250,8 +250,8 @@
                                                 <div>
                                                     <div class="form-group col-lg-8">
                                                         <label for="name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                                                        <asp:Button ID="btncancel" runat="server" Text="Cancel" class="btn btn-danger btnWidth" formnovalidate="" />
-                                                        <asp:Button ID="btnsave" runat="server" Text="Save" TabIndex="31" class="btn btn-primary btnWidth" OnClick="btnsave_Click" />
+                                                         <asp:Button ID="btnsave" runat="server" Text="Save" TabIndex="31" class="btn btn-danger btnWidth" OnClick="btnsave_Click" />
+                                                        <asp:Button ID="btncancel" runat="server" Text="Cancel" class="btn btn-primary btnWidth"  formnovalidate="" />                                                       
 
                                                     </div>
                                                     <div class="form-group col-md-4">

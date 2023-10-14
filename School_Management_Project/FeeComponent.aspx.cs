@@ -16,7 +16,7 @@ namespace School_Management_Project
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-           // Fill_Grid();                      
+            Fill_Grid();                      
         }
         public void ClearControlls()
         {
@@ -25,34 +25,37 @@ namespace School_Management_Project
             txtCompName.Text = "";
             txtamount.Text = "";
             txtdescription.Text = "";
-        }       
-        //public void Fill_Grid()
-        //{
-        //    con.Open();
-        //    SqlCommand cmd = new SqlCommand("sp_TBL_ComponentFee_get", con);
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //    DataSet ds = new DataSet();
-        //    da.Fill(ds);
-        //    if (ds.Tables[0].Rows.Count > 0)
-        //    {
-        //        grd.DataSource = ds;
-        //        grd.DataBind();
-        //    }
-        //    else
-        //    {
-        //        grd.DataSource = null;
-        //        grd.DataBind();
-        //    }
-        //    con.Close();
-        //}
+        }
+        //-----------------------
+        public void Fill_Grid()
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_TBL_feecomponent", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@action", "show");
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                ListView1.DataSource = ds;
+                ListView1.DataBind();
+            }
+            else
+            {
+                ListView1.DataSource = null;
+                ListView1.DataBind();
+            }
+            con.Close();
+        }
 
 
         protected void Button1_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("SP_TBL_CLASSESFEES_INSERT", con);
-            cmd.CommandType = CommandType.StoredProcedure;          
+            SqlCommand cmd = new SqlCommand("sp_TBL_feecomponent", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@action", "insert");
             cmd.Parameters.AddWithValue("@FYEAR", ddlFyear.SelectedValue);
             cmd.Parameters.AddWithValue("@FEES_TYPE", ddlFeeMode.SelectedValue);
             cmd.Parameters.AddWithValue("@CLASS_COMP", txtCompName.Text);
@@ -68,10 +71,10 @@ namespace School_Management_Project
             }
             con.Close();
             ClearControlls();
-            // Fill_Grid();
+            Fill_Grid();
         }
-        //protected void grd_RowCommand(object sender, GridViewCommandEventArgs e)
-        //{
+        protected void grd_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
         //    if (e.CommandName == "Mahi11")
         //    {
         //        con.Open();
@@ -105,6 +108,6 @@ namespace School_Management_Project
         //        con.Close();
         //        Fill_Grid();
         //    }
-        //}
+        }
     }
 }

@@ -27,9 +27,9 @@
                                         <table>
                                             <tr>
                                                 <lebel for="dept" class="reqinput">EMAIL FROM:-</lebel>
-                                                 <td style="width: 260px">
+                                                <td style="width: 260px">
                                                     <asp:TextBox ID="txtemailfrom" runat="server" TabIndex="1" class="form-control inlineDisplay" required="" placeholder="Mail From."></asp:TextBox>
-                                                 
+
                                                 </td>
                                             </tr>
                                         </table>
@@ -39,7 +39,7 @@
                                                 <%-- <td for="dept" class="reqinput" style="padding-bottom: 35px">Catagory :</td>--%>
                                                 <td style="width: 260px">
                                                     <asp:TextBox ID="txtemailto" runat="server" TabIndex="1" class="form-control inlineDisplay" required="" placeholder="Mail To"></asp:TextBox>
-                                                   
+
                                                 </td>
                                             </tr>
                                         </table>
@@ -55,7 +55,7 @@
                                             <tr>
                                                 <td></td>
                                                 <td>
-                                                    <asp:Button ID="Button1" runat="server" Text="Send" Style="Width: 130px; margin-left: 7px" class="btn btn-danger btnWidth" OnClick="Button1_Click" /></td>
+                                                    <asp:Button ID="Button1" runat="server" Text="Send" Style="width: 130px; margin-left: 7px" class="btn btn-danger btnWidth" OnClick="Button1_Click" /></td>
                                             </tr>
                                         </table>
                                     </div>
@@ -74,19 +74,19 @@
                                                 <lebal for="dept" class="reqinput">Description:</lebal>
                                                 <td>
                                                     <asp:TextBox ID="txtdescription" runat="server" TabIndex="4" Height="143px" Width="450px" TextMode="MultiLine" class="form-control inlineDisplay" placeholder="Enter Mail.." size="40"></asp:TextBox>
-                                                   </td>
+                                                </td>
                                             </tr>
                                         </table>
                                     </div>
                                     <table>
-                                    <tr>
-                                        <td></td>
-                                        <td>
-                                            <asp:Label ID="status" runat="server">  
-                                            </asp:Label>
-                                        </td>
-                                    </tr>
-                                        </table>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <asp:Label ID="status" runat="server">  
+                                                </asp:Label>
+                                            </td>
+                                        </tr>
+                                    </table>
                                 </div>
 
                                 <%--<div class="col-md-12">
@@ -122,25 +122,56 @@
                                 <div class="panel-body">
                                     <div class="form-horizontal row-border">
                                         <div class="widget-content no-padding">
-                                            <table class="TableCSS table-bordered">
-
-                                                <tr class="TableHeader">
-                                                    <td>Sr. No.</td>
-                                                    <td>Send To</td>
-
-                                                    <td>Calagory</td>
-
-                                                    <td>Date</td>
-
-                                                    <td>Description</td>
-
-                                                    <td>Edit</td>
-
-                                                    <td>Delete</td>
-
-                                                </tr>
-
-                                            </table>
+                                            <asp:ListView ID="grd" runat="server" DataSourceID="SqlDataSource1">
+                                                <LayoutTemplate>
+                                                    <table id="Table1" runat="server" class="TableCSS">
+                                                        <tr id="Tr1" runat="server" class="TableHeader">
+                                                            <td id="Td1" runat="server">Comment ID</td>
+                                                            <td id="Td2" runat="server">Blog ID</td>
+                                                            <td id="Td3" runat="server">Date</td>
+                                                            <td id="Td4" runat="server">Name</td>
+                                                            <td id="Td5" runat="server">Comments</td>
+                                                        </tr>
+                                                        <tr id="ItemPlaceholder" runat="server">
+                                                        </tr>
+                                                        <tr id="Tr2" runat="server">
+                                                            <td id="Td6" runat="server" colspan="2">
+                                                                <asp:DataPager ID="DataPager1" runat="server">
+                                                                    <Fields>
+                                                                        <asp:NextPreviousPagerField ButtonType="Link" />
+                                                                        <asp:NumericPagerField />
+                                                                        <asp:NextPreviousPagerField ButtonType="Link" />
+                                                                    </Fields>
+                                                                </asp:DataPager>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                                </LayoutTemplate>
+                                                <ItemTemplate>
+                                                    <tr class="TableData">
+                                                        <td>
+                                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("id")%>'>   
+                                                            </asp:Label>
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("Blog_id")%>'>   
+                                                            </asp:Label>
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Date")%>'>   
+                                                            </asp:Label>
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="Label4" runat="server" Text='<%# Eval("Name")%>'>   
+                                                            </asp:Label>
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="Label5" runat="server" Text='<%# Eval("Comment")%>'>   
+                                                            </asp:Label>
+                                                        </td>
+                                                    </tr>
+                                                </ItemTemplate>
+                                            </asp:ListView>
                                         </div>
                                     </div>
                                 </div>

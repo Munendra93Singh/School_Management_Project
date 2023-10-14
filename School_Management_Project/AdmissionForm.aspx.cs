@@ -20,16 +20,17 @@ namespace School_Management_Project
         protected void Page_Load(object sender, EventArgs e)
         {
 
-           // if (!IsPostBack)
-            //{
-            //    Fill_Country(ddladdclas);
-            //    Fill_City(ddlcity);
-            //    Fill_State(ddlstate);
-                  Fill_Grid();
-            //    ClearControlls();
-            //    //generatesno();
-                  //GetGridValues();
+            if (!IsPostBack)
+            {
+                Fill_Class(ddladdclas);
+                //Fill_Classyear(ddlclassyear);               
+                Fill_State(ddlstate);
+                Fill_Grid();
+                ClearControlls();
+                //generatesno();
+                //GetGridValues();
             }
+        }
 
         public void ClearControlls()
         {
@@ -39,7 +40,7 @@ namespace School_Management_Project
             txtenrlonuber.Text = "";
             txtmobile.Text = "";
             txtSname.Text = "";
-            txtfathername.Text = "";    
+            txtfathername.Text = "";
             txtmothername.Text = "";
             ddlgender.SelectedValue = "";
             txtdob.Text = "";
@@ -54,6 +55,10 @@ namespace School_Management_Project
             ddlstate.SelectedValue = "";
             ddlcity.SelectedValue = "";
             txtpincode.Text = "";
+            ddladdclas.SelectedValue = "0";
+            ddlclassyear.SelectedValue = "0";
+            ddlcity.SelectedValue = "0";
+            ddlstate.SelectedValue = "0";
             //cmd.Parameters.AddWithValue("@imageupload", load);
         }
         //public DataTable GetGridValues()
@@ -81,20 +86,21 @@ namespace School_Management_Project
         public void Fill_Grid()
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("sp_TBL_AdmissionStudent_GET", con);
+            SqlCommand cmd = new SqlCommand("sp_TBL_Admission", con);
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@action", "show");
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
             {
-                grd.DataSource = ds;
-                grd.DataBind();
+                ListView1.DataSource = ds;
+                ListView1.DataBind();
             }
             else
             {
-                grd.DataSource = null;
-                grd.DataBind();
+                ListView1.DataSource = null;
+                ListView1.DataBind();
             }
             con.Close();
         }
@@ -151,88 +157,123 @@ namespace School_Management_Project
         //        scon1.Close();
         //    }
         //}
-        //public void Fill_Country(DropDownList ddl)
-        //{
-        //    if (con.State == ConnectionState.Open)
-        //    {
-        //        con.Close();
-        //    }
-        //    con.Open();
-        //    SqlCommand cmd = new SqlCommand("sp_TBL_AddClass_get", con);
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //    DataSet ds = new DataSet();
-        //    da.Fill(ds);
-        //    if (ds.Tables[0].Rows.Count > 0)
-        //    {
-        //        ddl.DataValueField = "Cl_id";
-        //        ddl.DataTextField = "classmode";
-        //        ddl.DataSource = ds;
-        //        ddl.DataBind();
-        //        ddl.Items.Insert(0, new ListItem("Selected", "0"));
-        //    }
-        //    else
-        //    {
-        //        ddl.DataSource = null;
-        //        ddl.DataBind();
-        //    }
-        //    con.Close();
-        //}
-        //public void Fill_State(DropDownList ddl)
-        //{
-        //    if (con.State == ConnectionState.Open)
-        //    {
-        //        con.Close();
-        //    }
-        //    con.Open();
-        //    SqlCommand cmd = new SqlCommand("sp_TBL_State_get", con);
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //    DataSet ds = new DataSet();
-        //    da.Fill(ds);
-        //    if (ds.Tables[0].Rows.Count > 0)
-        //    {
-        //        ddl.DataValueField = "Sid";
-        //        ddl.DataTextField = "State_Name";
-        //        ddl.DataSource = ds;
-        //        ddl.DataBind();
-        //        ddl.Items.Insert(0, new ListItem("Selected", "0"));
-        //    }
-        //    else
-        //    {
-        //        ddl.DataSource = null;
-        //        ddl.DataBind();
-        //    }
-        //    con.Close();
-        //}
-        //public void Fill_City(DropDownList ddl)
-        //{
-        //    if (con.State == ConnectionState.Open)
-        //    {
-        //        con.Close();
-        //    }
-        //    con.Open();
-        //    SqlCommand cmd = new SqlCommand("sp_TBL_City_get", con);
-        //    cmd.CommandType = CommandType.StoredProcedure;
-        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
-        //    DataSet ds = new DataSet();
-        //    da.Fill(ds);
-        //    if (ds.Tables[0].Rows.Count > 0)
-        //    {
-        //        ddl.DataValueField = "Cid";
-        //        ddl.DataTextField = "City_name";
-        //        ddl.DataSource = ds;
-        //        ddl.DataBind();
-        //        ddl.Items.Insert(0, new ListItem("Selected", "0"));
-        //    }
-        //    else
-        //    {
-        //        ddl.DataSource = null;
-        //        ddl.DataBind();
-        //    }
-        //    con.Close();
-        //}
 
+
+        public void Fill_Class(DropDownList ddl)
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_TBL_Addclass", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@action", "show");
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                ddl.DataValueField = "Cl_id";
+                ddl.DataTextField = "class";
+                ddl.DataSource = ds;
+                ddl.DataBind();
+                ddl.Items.Insert(0, new ListItem("Selected", "0"));
+            }
+            else
+            {
+                ddl.DataSource = null;
+                ddl.DataBind();
+            }
+            con.Close();
+        }        
+       public void Bind_ddlClassyear()
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
+            SqlCommand cmd = new SqlCommand(" select * from TBL_ClassSem where cl_Id ='" + ddladdclas.SelectedValue + "'", con);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            ddlclassyear.DataSource = dr;
+            ddlclassyear.Items.Clear();
+            ddlclassyear.Items.Add("--Please Select city--");
+            ddlclassyear.DataTextField = "Class_year";
+            ddlclassyear.DataValueField = "cls_id";
+            ddlclassyear.DataBind();
+            con.Close();
+
+        }
+
+        public void Bind_ddlclaasfees()
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
+            SqlCommand cmd = new SqlCommand(" select * from TBL_ClassSem where cl_Id ='" + ddladdclas.SelectedValue + "'", con);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            ddlclaasfees.DataSource = dr;
+            ddlclaasfees.Items.Clear();
+            ddlclaasfees.Items.Add("--Please Select Amount--");
+            ddlclaasfees.DataTextField = "Class_Description";
+            ddlclaasfees.DataValueField = "cls_id";
+            ddlclaasfees.DataBind();
+            con.Close();
+        }
+
+
+        public void Fill_State(DropDownList ddl)
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
+            SqlCommand cmd = new SqlCommand("sp_TBL_State", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@action", "show");
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            if (ds.Tables[0].Rows.Count > 0)
+            {
+                ddl.DataValueField = "Sid";
+                ddl.DataTextField = "State_Name";
+                ddl.DataSource = ds;
+                ddl.DataBind();
+                ddl.Items.Insert(0, new ListItem("Selected", "0"));
+            }
+            else
+            {
+                ddl.DataSource = null;
+                ddl.DataBind();
+            }
+            con.Close();
+        }
+        public void Bind_ddlCity()
+        {
+            if (con.State == ConnectionState.Open)
+            {
+                con.Close();
+            }
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select * from TBL_City where Sid ='" + ddlstate.SelectedValue + "'", con);
+
+            SqlDataReader dr = cmd.ExecuteReader();
+            ddlcity.DataSource = dr;
+            ddlcity.Items.Clear();
+            ddlcity.Items.Add("--Please Select city--");
+            ddlcity.DataTextField = "City_name";
+            ddlcity.DataValueField = "Cid";
+            ddlcity.DataBind();
+            con.Close();
+
+        }
         protected void btn_Click(object sender, EventArgs e)
         {
             string folderPath = Server.MapPath("~/Files/");
@@ -259,19 +300,19 @@ namespace School_Management_Project
             //using (var wb = new WebClient())
             //{
             //    byte[] response = wb.UploadValues("https://api.textlocal.in/send/", new NameValueCollection()
-            //    {
-            //        { "apikey" , "2eHUcOUa1AM-x41B46kEWPEUV3rQsnKfLVaSe0sQab"},
-            //        {"numbers" , destinationaddr},
-            //        {"message" , message},
-            //        {"sender" , "TXTLCL"}
+            //        {
+            //            { "apikey" , "2eHUcOUa1AM-x41B46kEWPEUV3rQsnKfLVaSe0sQab"},
+            //            {"numbers" , destinationaddr},
+            //            {"message" , message},
+            //            {"sender" , "TXTLCL"}
 
-            //    });
+            //        });
             //    string result = System.Text.Encoding.UTF8.GetString(response);
             //    Response.Write(result);
             //    Label6.Text = "You have Successfully Registration";
             //}
-            // }
-            //  public void savedata()
+
+            //public void savedata();
 
             String pass = "S023456789";
             Random r = new Random();
@@ -281,15 +322,16 @@ namespace School_Management_Project
                 mypass[i] = pass[(int)(10 * r.NextDouble())];
             }
             txtRollnumber.Text = "" + new string(mypass) + "";
-          //  Label = "" + new string(mypass) + "";
+            //  Label = "" + new string(mypass) + "";
             string load = "";
             if (btnsave.Text == "Save")
             {
                 load = DateTime.Now.Ticks.ToString() + Path.GetFileName(imgupload.PostedFile.FileName);
                 imgupload.SaveAs(Server.MapPath("FIleImage" + "\\" + load));
                 con.Open();
-                SqlCommand cmd = new SqlCommand("sp_TBL_AdmissionStudent_Insert", con);
+                SqlCommand cmd = new SqlCommand("sp_TBL_Admission", con);
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@action", "insert");
                 cmd.Parameters.AddWithValue("@Yearname", ddlFinyear.SelectedValue);
                 cmd.Parameters.AddWithValue("@Ragnumber", txtRollnumber.Text);
                 cmd.Parameters.AddWithValue("@Stname", txtstatus.Text);
@@ -304,19 +346,20 @@ namespace School_Management_Project
                 cmd.Parameters.AddWithValue("@Religion", ddlreligion.SelectedValue);
                 cmd.Parameters.AddWithValue("@castcatagory", ddlCategory.SelectedValue);
                 cmd.Parameters.AddWithValue("@Admissiondate", txtAdmDate.Text);
-                cmd.Parameters.AddWithValue("@Class", ddladdclas.SelectedValue);
+                cmd.Parameters.AddWithValue("@Class", ddladdclas.SelectedItem.Text);
                 cmd.Parameters.AddWithValue("@Groccupation", ddloccupation.SelectedValue);
                 cmd.Parameters.AddWithValue("@Mariedstatus", txtmaritalstatus.Text);
                 cmd.Parameters.AddWithValue("@Address", txtaddress.Text);
-                cmd.Parameters.AddWithValue("@state", ddlstate.SelectedValue);
-                cmd.Parameters.AddWithValue("@city", ddlcity.SelectedValue);
+                cmd.Parameters.AddWithValue("@state", ddlstate.SelectedItem.Text);
+                cmd.Parameters.AddWithValue("@city", ddlcity.SelectedItem.Text);
                 cmd.Parameters.AddWithValue("@pincode", txtpincode.Text);
                 cmd.Parameters.AddWithValue("@imageupload", load);
+                cmd.Parameters.AddWithValue("@classyear", ddlclassyear.SelectedItem.Text);
                 cmd.ExecuteNonQuery();
                 {
-                    string message = "Your details have been saved successfully.";
+                    //string message = "Your details have been saved successfully.";
                     string script = "window.onload = function(){ alert('";
-                    script += message;
+                    //script += message;
                     script += "')};";
                     ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
 
@@ -324,13 +367,24 @@ namespace School_Management_Project
                 con.Close();
                 Fill_Grid();
                 //ClearControlls();
-               // generatesno();
+                // generatesno();
             }
         }
 
         protected void grd_RowCommand(object sender, GridViewCommandEventArgs e)
         {
 
+        }
+
+        protected void ddlstate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Bind_ddlCity();
+        }
+
+        protected void ddladdclas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Bind_ddlClassyear();
+            Bind_ddlclaasfees();
         }
     }
 

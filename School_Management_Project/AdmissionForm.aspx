@@ -13,7 +13,9 @@
                     dateFormat: 'dd/mm/yy',
                     changeMonth: true,
                     changeYear: true,
-                    yearRange: '1950:2100'
+                    yearRange: '1950:2100',
+                    maxDate: 5,
+
                 });
         });
     </script>
@@ -24,7 +26,8 @@
                     dateFormat: 'dd/mm/yy',
                     changeMonth: true,
                     changeYear: true,
-                    yearRange: '1950:2100'
+                    yearRange: '1950:2100',
+                    minDate: 5,
                 });
         });
     </script>
@@ -133,9 +136,9 @@
                                                     <label for="dept">Admission Date:</label><span class="reqinput"></span>
                                                     <asp:TextBox ID="txtAdmDate" runat="server" autocomplete="off" TabIndex="11" class="form-control inlineDisplay" placeholder="dd-mm-yyyy" required="" Style="width: 100%;"></asp:TextBox>
                                                 </div>
-                                                <div class="form-group col-lg-3">
+                                                <div class="form-group col-lg-6">
                                                     <label for="dept">Class:</label><span class="reqinput"></span>
-                                                    <asp:DropDownList ID="ddladdclas" runat="server" TabIndex="12" class="form-control inlineDisplay" Style="width: 100%;"></asp:DropDownList>
+                                                    <asp:DropDownList ID="ddladdclas" runat="server" TabIndex="12" class="form-control inlineDisplay" Style="width: 100%;" OnSelectedIndexChanged="ddladdclas_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
 
                                                 </div>
                                                 <div class="form-group col-lg-3">
@@ -179,11 +182,12 @@
                                                     </div>
                                                     <div class="form-group col-lg-2">
                                                         <label for="dept">State:</label><span class="reqinput"></span>
-                                                        <asp:DropDownList ID="ddlstate" runat="server" TabIndex="14" class="form-control inlineDisplay" Style="width: 150px"></asp:DropDownList>
+                                                        <asp:DropDownList ID="ddlstate" runat="server" TabIndex="14" class="form-control inlineDisplay" Style="width: 150px" OnSelectedIndexChanged="ddlstate_SelectedIndexChanged" AutoPostBack="true"></asp:DropDownList>
                                                     </div>
+
                                                     <div class="form-group col-lg-2">
                                                         <label for="dept">District:</label><span class="reqinput"></span>
-                                                        <asp:DropDownList ID="ddlcity" runat="server" TabIndex="16" class="form-control inlineDisplay" Style="width: 150px"></asp:DropDownList>
+                                                        <asp:DropDownList ID="ddlcity" runat="server" TabIndex="16" class="form-control inlineDisplay" AutoPostBack="true" AppendDataBoundItems="true"></asp:DropDownList>
                                                     </div>
                                                     <div class="form-group col-lg-3">
                                                         <label for="dept">Pin Code:</label>
@@ -191,31 +195,17 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group col-lg-12">
-                                                <div class="form-group col-lg-3">
-                                                    <label for="dept">Amount:</label><span class="reqinput"></span>
-                                                    <asp:TextBox ID="txtamount" runat="server" TabIndex="14" class="form-control inlineDisplay" placeholder="Amount" required="" Style="width: 80%"></asp:TextBox>
-
-                                                    <%-- <asp:DropDownList ID="ddlcolage" runat="server" TabIndex="21" class="form-control inlineDisplay" Style="width: 200px">
-                                                        <asp:ListItem Text="Select" Value="Select"></asp:ListItem>
-                                                        <asp:ListItem Text="Arya College of Pharmacy" Value="Arya College of Pharmacy"></asp:ListItem>
-                                                    </asp:DropDownList>--%>
-                                                </div>
-                                                <div class="form-group col-lg-3">
-                                                    <label for="dept">Class Type:</label><span class="reqinput"></span>
-                                                    <asp:DropDownList ID="ddlclassyear" runat="server" TabIndex="19" class="form-control inlineDisplay" Style="width: 200px;">
-                                                    </asp:DropDownList>
-                                                </div>
-                                                <div class="form-group col-lg-3">
+                                            <div class="form-group col-lg-12">                                              
+                                                  <div class="form-group col-lg-3">
                                                     <label for="dept">Academic Year:</label><span class="reqinput"></span>
-                                                    <select name="AcademicYear" id="AcademicYear" tabindex="19" class="form-control inlineDisplay" style="width: 200px;">
-                                                        <option selected="selected" value="">Select</option>
-                                                        <option value="Ist Year">Ist Semister</option>
-                                                        <option value="IInd Year">IInd Semister</option>
-                                                        <option value="IInd Year">IIInd Semister</option>
-                                                        <option value="IInd Year">IVth Semister</option>
-                                                    </select>
+                                                    <asp:DropDownList ID="ddlclaasfees" runat="server" TabIndex="16" class="form-control inlineDisplay" AutoPostBack="true" AppendDataBoundItems="true"></asp:DropDownList>
                                                 </div>
+                                                <div class="form-group col-lg-3">
+                                                    <label for="dept">Class Year/Class Type:</label><span class="reqinput"></span>
+                                                    <asp:DropDownList ID="ddlclassyear" DataTextField="Year" runat="server" TabIndex="19" class="form-control inlineDisplay" Style="width: 200px;">
+                                                    </asp:DropDownList>
+                                                </div>                                              
+
 
                                                 <div class="form-group col-lg-3">
                                                     <label for="dept">Academic Fess Type:</label><span class="reqinput"></span>
@@ -225,200 +215,162 @@
                                                         <option value="Pending Payment">Pending Payment</option>
                                                     </select>
                                                 </div>
-
-                                            </div>
-                                        </div>
-                                        <%--<div>
-                                                <div class="form-group col-lg-12">
-                                                    <div class="form-group col-lg-2">
-                                                        <label for="dept">Transport Required:</label>
-                                                        <table id="ContentPlaceHolder1_rbTPReq" class="RBL">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        <input id="ContentPlaceHolder1_rbTPReq_0" type="radio" name="ctl00$ContentPlaceHolder1$rbTPReq" value="Yes" onclick="javascript: setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$rbTPReq$0\',\'\')', 0)" tabindex="19"><label for="ContentPlaceHolder1_rbTPReq_0">Yes</label></td>
-                                                                    <td>
-                                                                        <input id="ContentPlaceHolder1_rbTPReq_1" type="radio" name="ctl00$ContentPlaceHolder1$rbTPReq" value="No" checked="checked" tabindex="19"><label for="ContentPlaceHolder1_rbTPReq_1">No</label></td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-
-                                                    <div class="form-group col-lg-2">
-                                                        <label for="dept">Hostel Required:</label>
-                                                        <table id="ContentPlaceHolder1_rbHostelReq" class="RBL">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        <input id="ContentPlaceHolder1_rbHostelReq_0" type="radio" name="ctl00$ContentPlaceHolder1$rbHostelReq" value="Yes" onclick="javascript: setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$rbHostelReq$0\',\'\')', 0)" tabindex="21"><label for="ContentPlaceHolder1_rbHostelReq_0">Yes</label></td>
-                                                                    <td>
-                                                                        <input id="ContentPlaceHolder1_rbHostelReq_1" type="radio" name="ctl00$ContentPlaceHolder1$rbHostelReq" value="No" checked="checked" tabindex="21"><label for="ContentPlaceHolder1_rbHostelReq_1">No</label></td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-
-                                                    <div class="form-group col-lg-2">
-                                                        <label for="dept">Mess Required:</label>
-                                                        <table id="ContentPlaceHolder1_rbMessReq" class="RBL">
-                                                            <tbody>
-                                                                <tr>
-                                                                    <td>
-                                                                        <input id="ContentPlaceHolder1_rbMessReq_0" type="radio" name="ctl00$ContentPlaceHolder1$rbMessReq" value="Yes" onclick="javascript: setTimeout('__doPostBack(\'ctl00$ContentPlaceHolder1$rbMessReq$0\',\'\')', 0)" tabindex="23"><label for="ContentPlaceHolder1_rbMessReq_0">Yes</label></td>
-                                                                    <td>
-                                                                        <input id="ContentPlaceHolder1_rbMessReq_1" type="radio" name="ctl00$ContentPlaceHolder1$rbMessReq" value="No" checked="checked" tabindex="23"><label for="ContentPlaceHolder1_rbMessReq_1">No</label></td>
-                                                                </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
-
+                                                  <div class="form-group col-lg-3">
+                                                    <label for="dept">Amount:</label><span class="reqinput"></span>
+                                                    <asp:TextBox ID="txtamount" runat="server" TabIndex="14" class="form-control inlineDisplay" placeholder="Amount" required="" Style="width: 80%"></asp:TextBox>
                                                 </div>
-                                            </div>--%>
-                                        <div>
-                                        </div>
-                                        <!-- /.box-body -->
-                                        <div>
-                                            <div class="form-group col-lg-3">
-                                                <label for="dept"></label>
-                                                <br>
-                                                <asp:Button ID="btnsave" runat="server" Text="Save" TabIndex="31" class="btn btn-danger btnWidth" OnClick="btnsave_Click" />
-                                                <asp:Button ID="btncancel" runat="server" Text="Cancel" class="btn btn-primary btnWidth" formnovalidate="" />
-                                            </div>
-                                            <asp:Label ID="Label6" runat="server" Text="Label6"></asp:Label>
-                                        </div>
-                                        <!-- /. box -->
-
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /.row -->
-                            <div class="container-fluid">
-                                <div style="visibility: visible; opacity: 1; display: block; transform: translateY(0px);" data-widget-static="" class="panel panel-default" data-widget="{&quot;draggable&quot;: &quot;false&quot;}">
-                                    <div class="panel-heading">
-                                        <h2>Enquery Form Details</h2>
-                                        <%--<div class=" col-md-3" style="float: right">
-                                            <%-- <label for="name">Search:</label>
-                                            <input name="ctl00$ContentPlaceHolder1$tbSearch" type="text" id="Text1" tabindex="32" class="form-control inlineDisplay" placeholder="Search" style="width: 180px;">
-                                            <input type="image" name="ImageButton1" id="Image2" tabindex="33" class="imagebtn" formnovalidate="" src="../Img/search.png" style="height: 30px; width: 30px; position: relative; top: 7px">
-                                        </div>--%>
-                                    </div>
-                                    <div class="panel-heading">
-                                    </div>
-                                    <div class="panel-editbox" data-widget-controls=""></div>
-                                    <div class="panel-body">
-                                        <div class="form-horizontal row-border">
-                                            <div class="widget-content no-padding">
-                                                <section class="abt">
-                                                    <div style="height: 200px; overflow: auto;">
-                                                        <table style="background-color: white">
-                                                            <table class="TableCSS table-bordered">
-                                                                <asp:GridView ID="grd" runat="server" AutoGenerateColumns="false" OnRowCommand="grd_RowCommand" BorderWidth="1" EmptyDataText="There are no data records to display." BackColor="White" BorderColor="#DEDFDE" BorderStyle="None" ForeColor="Black" GridLines="Vertical" CssClass="table ">
-                                                                    <RowStyle BorderWidth="1" BorderColor="Black" />
-                                                                    <AlternatingRowStyle BackColor="White" />
-                                                                    <Columns>
-                                                                        <asp:TemplateField HeaderText="Photo">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <asp:Image ID="Image1" runat="server" ImageUrl='<%#Eval("imageupload","~/FIleImage/{0}") %>' Width="100px" Height="60px" />
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        <asp:TemplateField HeaderText="Ragistration No.">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("Ragnumber") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        <asp:TemplateField HeaderText="Name">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("Studntname") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        <asp:TemplateField HeaderText="Father Name">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("fathername") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        <asp:TemplateField HeaderText="Gender">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("Gender") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        <asp:TemplateField HeaderText="Gender">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("Gender") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-
-                                                                        <asp:TemplateField HeaderText="Status">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("Mariedstatus") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        <asp:TemplateField HeaderText="Birth">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("DOB") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        <asp:TemplateField HeaderText="Class">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("Class") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        <asp:TemplateField HeaderText="Address">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("Address") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        <asp:TemplateField HeaderText="Occupation">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("Groccupation") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                        <asp:TemplateField HeaderText="Date">
-                                                                            <ItemStyle HorizontalAlign="Left" VerticalAlign="Middle" Wrap="true" Font-Size="Small" />
-                                                                            <ItemTemplate>
-                                                                                <%#Eval("Admissiondate") %>
-                                                                            </ItemTemplate>
-                                                                        </asp:TemplateField>
-
-                                                                    </Columns>
-                                                                </asp:GridView>
-                                                            </table>
-                                                        </table>
-                                                    </div>
-                                                </section>
                                             </div>
                                         </div>
                                     </div>
+
+                                    <div>
+                                    </div>
+                                    <!-- /.box-body -->
+                                    <div>
+                                        <div class="form-group col-lg-3">
+                                            <label for="dept"></label>
+                                            <br>
+                                            <asp:Button ID="btnsave" runat="server" Text="Save" TabIndex="31" class="btn btn-danger btnWidth" OnClick="btnsave_Click" />
+                                            <asp:Button ID="btncancel" runat="server" Text="Cancel" class="btn btn-primary btnWidth" formnovalidate="" />
+                                        </div>
+                                        <asp:Label ID="Label6" runat="server" Text="Label6"></asp:Label>
+                                    </div>
+                                    <!-- /. box -->
+
                                 </div>
                             </div>
+                        </div>
+                        <!-- /.row -->
 
-                            <asp:GridView ID="GridView2" runat="server" AutoGenerateColumns="true"></asp:GridView>
+
+                        <div class="container-fluid">
+                            <div style="visibility: visible; opacity: 1; display: block; transform: translateY(0px);" data-widget-static="" class="panel panel-default" data-widget="{&quot;draggable&quot;: &quot;false&quot;}">
+                                <div class="panel-heading">
+                                    <h2>Component Details</h2>
+                                    <div class=" col-md-3" style="float: right">
+                                        <%-- <label for="name">Search:</label>--%>
+                                        <input name="ctl00$ContentPlaceHolder1$tbSearch" type="text" id="Text1" tabindex="32" class="form-control inlineDisplay" placeholder="Search" style="width: 180px;">
+                                        <input type="image" name="ImageButton1" id="Image2" tabindex="33" class="imagebtn" formnovalidate="" src="../Img/search.png" style="height: 30px; width: 30px; position: relative; top: 7px">
+                                    </div>
+                                    <div class="panel-heading">
+                                    </div>
+                                </div>
+                                <div class="panel-editbox" data-widget-controls=""></div>
+                                <div class="panel-body">
+                                    <div style="height: 230px; overflow: auto">
+                                        <table style="background-color: white">
+                                            <asp:ListView ID="ListView1" runat="server">
+                                                <LayoutTemplate>
+                                                    <table class="TableCSS table-bordered">
+                                                        <tr class="TableHeader">
+                                                            <td>Edit</td>
+                                                            <td>Sr.No.</td>
+                                                            <td>Ragistration No.</td>
+                                                            <td>Student Name</td>
+                                                            <td>Mobile</td>
+                                                            <td>City</td>
+                                                            <td>Admission Date</td>
+                                                            <td>Study Center</td>
+                                                            <td>Student Class</td>
+                                                        </tr>
+                                                        <tbody>
+                                                            <asp:PlaceHolder ID="itemPlaceHolder" runat="server" />
+                                                        </tbody>
+                                                    </table>
+                                                </LayoutTemplate>
+                                                <ItemTemplate>
+                                                    <tr class="TableDataback">
+                                                        <td>
+                                                            <a href='Writereaddata/<%# Eval("ADM_ID") %>' target="_blank">
+                                                                <asp:Image ID="pdfimg" runat="server" ImageUrl="~/Img/edit.png" Height="25px" Width="29px" />
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="Label12" runat="server" Text='<%# Eval("ADM_ID")%>'>   
+                                                            </asp:Label>
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Ragnumber")%>'>   
+                                                            </asp:Label>
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("Studntname")%>'>   
+                                                            </asp:Label>
+                                                        </td>
+                                                        <td>
+                                                            <%-- <asp:Label ID="Label3" runat="server" Text='<%# Eval("Mobile")%>'>   
+                                                                </asp:Label>--%>
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="Label4" runat="server" Text='<%# Eval("city")%>'>   
+                                                            </asp:Label>
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="Label5" runat="server" Text='<%# Eval("Admissiondate")%>'>   
+                                                            </asp:Label>
+                                                        </td>
+                                                        <td>
+                                                            <%-- <asp:Label ID="Label3" runat="server" Text='<%# Eval("StudyCenter")%>'>   
+                                                                </asp:Label>--%>
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="Label8" runat="server" Text='<%# Eval("Class")%>'>   
+                                                            </asp:Label>
+                                                        </td>
+                                                    </tr>
+                                                </ItemTemplate>
+                                                <AlternatingItemTemplate>
+                                                    <tr class="TableData">
+                                                        <td>
+                                                            <a href='Writereaddata/<%# Eval("ADM_ID") %>' target="_blank">
+                                                                <asp:Image ID="pdfimg" runat="server" ImageUrl="~/Img/edit.png" Height="25px" Width="29px" />
+                                                            </a>
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="Label12" runat="server" Text='<%# Eval("ADM_ID")%>'>   
+                                                            </asp:Label>
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="Label1" runat="server" Text='<%# Eval("Ragnumber")%>'>   
+                                                            </asp:Label>
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="Label2" runat="server" Text='<%# Eval("Studntname")%>'>   
+                                                            </asp:Label>
+                                                        </td>
+                                                        <td>
+                                                            <%-- <asp:Label ID="Label3" runat="server" Text='<%# Eval("Mobile")%>'>   
+                                                                </asp:Label>--%>
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="Label4" runat="server" Text='<%# Eval("city")%>'>   
+                                                            </asp:Label>
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="Label5" runat="server" Text='<%# Eval("Admissiondate")%>'>   
+                                                            </asp:Label>
+                                                        </td>
+                                                        <td>
+                                                            <%-- <asp:Label ID="Label3" runat="server" Text='<%# Eval("StudyCenter")%>'>   
+                                                                </asp:Label>--%>
+                                                        </td>
+                                                        <td>
+                                                            <asp:Label ID="Label8" runat="server" Text='<%# Eval("Class")%>'>   
+                                                            </asp:Label>
+                                                        </td>
+                                                    </tr>
+                                                </AlternatingItemTemplate>
+                                            </asp:ListView>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
     </div>
 </asp:Content>
 

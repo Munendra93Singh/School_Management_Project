@@ -231,13 +231,13 @@ namespace School_Management_Project
         protected global::System.Web.UI.WebControls.TextBox txtpincode;
 
         /// <summary>
-        /// txtamount control.
+        /// ddlclaasfees control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtamount;
+        protected global::System.Web.UI.WebControls.DropDownList ddlclaasfees;
 
         /// <summary>
         /// ddlclassyear control.
@@ -247,6 +247,15 @@ namespace School_Management_Project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlclassyear;
+
+        /// <summary>
+        /// txtamount control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtamount;
 
         /// <summary>
         /// btnsave control.
@@ -276,21 +285,12 @@ namespace School_Management_Project
         protected global::System.Web.UI.WebControls.Label Label6;
 
         /// <summary>
-        /// grd control.
+        /// ListView1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView grd;
-
-        /// <summary>
-        /// GridView2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView2;
+        protected global::System.Web.UI.WebControls.ListView ListView1;
     }
 }

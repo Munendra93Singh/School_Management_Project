@@ -1,0 +1,43 @@
+﻿.cssPager td {
+    padding-left: 3px;
+    padding-right: 3px;
+    font-family: Verdana;
+    font-size: 12px;
+}
+
+#ContentPlaceHolder1_GV_Data tr td {
+    text-align: left !important;
+    text-transform: uppercase;
+    padding: 0 10px 0 4px;
+}
+
+.gd-style tr td {
+    text-align: left !important;
+    text-transform: uppercase;
+    padding: 0 10px 0 4px;
+}
+
+.txt-header {
+    font-family: initial;
+    text-transform: uppercase;
+    font-size: small;
+}
+
+.TableData {
+    font-size: small;
+    font-weight: inherit;
+    font-family: math;
+    height: 35px;
+    text-align: left;
+    color: black;
+}
+.TableDataback {
+    font-size: small;
+    font-weight: inherit;
+    font-family: math;
+    height: 35px;
+    text-align: left;
+    color: black;
+    background-color: #c7d4f263;
+}
+

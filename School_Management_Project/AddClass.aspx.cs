@@ -15,12 +15,13 @@ namespace School_Management_Project
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-            //if (!IsPostBack)
-            //{
-            //    Fill_Amount(ddlAmount);
+            if (!IsPostBack)
+            {
+                //    Fill_Amount(ddlAmount);
                 //ddlAmount.Items.Insert(0, new ListItem("--Select--", "0"));
                 Fill_Grid();
-           // }
+                ClearControlls();
+           }
         }
         public void ClearControlls()
         {
@@ -34,20 +35,21 @@ namespace School_Management_Project
         public void Fill_Grid()
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("sp_TBL_Addclass_get", con);
+            SqlCommand cmd = new SqlCommand("sp_TBL_Addclass", con);
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@action", "show");
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataSet ds = new DataSet();
             da.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
             {
-                grd.DataSource = ds;
-                grd.DataBind();
+                ListView1.DataSource = ds;
+                ListView1.DataBind();
             }
             else
             {
-                grd.DataSource = null;
-                grd.DataBind();
+                ListView1.DataSource = null;
+                ListView1.DataBind();
             }
             con.Close();
         }
@@ -85,8 +87,9 @@ namespace School_Management_Project
         protected void txtsave_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("sp_TBL_Addclass_insert", con);
+            SqlCommand cmd = new SqlCommand("sp_TBL_Addclass", con);
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@action", "insert");
             cmd.Parameters.AddWithValue("@FYear", ddlFyear.SelectedValue);
             cmd.Parameters.AddWithValue("@ClassYear", ddlyear.SelectedValue);
             cmd.Parameters.AddWithValue("@ClassAmount", txtamount.Text);

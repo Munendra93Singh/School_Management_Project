@@ -119,8 +119,9 @@ namespace School_Management_Project
             //TextBox1.Text = "" + new string(mypass) + "";
             //------------------------------
             con.Open();
-            SqlCommand cmd = new SqlCommand("Sp_TBL_REGISTRATIONFORM_INSERT", con);
+            SqlCommand cmd = new SqlCommand("sp_TBL_Registration", con);
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@action", "insert");
             cmd.Parameters.AddWithValue("@STUDENT_FINYEAR", ddlFinYear.Text);
             cmd.Parameters.AddWithValue("@STUDENT_NAME", txtName.Text);
             cmd.Parameters.AddWithValue("@FATHER_NAME", txtFatherName.Text);

@@ -1,38 +1,33 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using System.Data;
-using System.Data.SqlClient;
 using System.Configuration;
 
 namespace School_Management_Project
 {
-    public partial class City : System.Web.UI.Page
+    public partial class AddYearCat : System.Web.UI.Page
     {
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
             if (!IsPostBack)
             {
-                Fill_Country(ddlState);
-                Fill_Grid();
+                Fill_Class(ddlclass);              
             }
-            
-        }
+            Fill_Grid();
 
-
-        public void ClearControlls()
-        {
-            txtcity.Text = "";
         }
         public void Fill_Grid()
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("sp_TBL_City", con);
+            SqlCommand cmd = new SqlCommand("sp_TBL_ClassSem", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@action", "show");
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -40,27 +35,25 @@ namespace School_Management_Project
             da.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
             {
-                ListView1.DataSource = ds;
-                ListView1.DataBind();
+                ListView.DataSource = ds;
+                ListView.DataBind();
             }
             else
             {
-                ListView1.DataSource = null;
-                ListView1.DataBind();
+                ListView.DataSource = null;
+                ListView.DataBind();
             }
             con.Close();
         }
 
-
-
-        public void Fill_Country(DropDownList ddl)
+        public void Fill_Class(DropDownList ddl)
         {
             if (con.State == ConnectionState.Open)
             {
                 con.Close();
             }
             con.Open();
-            SqlCommand cmd = new SqlCommand("sp_TBL_State", con);
+            SqlCommand cmd = new SqlCommand("sp_TBL_Addclass", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@action", "show");
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -68,11 +61,11 @@ namespace School_Management_Project
             da.Fill(ds);
             if (ds.Tables[0].Rows.Count > 0)
             {
-                ddl.DataValueField = "Sid";
-                ddl.DataTextField = "State_Name";
+                ddl.DataValueField = "Cl_id";
+                ddl.DataTextField = "class";
                 ddl.DataSource = ds;
                 ddl.DataBind();
-                ddl.Items.Insert(0, new ListItem("SELECT", "0"));
+                ddl.Items.Insert(0, new ListItem("Selected", "0"));
             }
             else
             {
@@ -80,28 +73,23 @@ namespace School_Management_Project
                 ddl.DataBind();
             }
             con.Close();
-
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void btnsave_Click(object sender, EventArgs e)
         {
             con.Open();
-            SqlCommand cmd = new SqlCommand("sp_TBL_City", con);
+            SqlCommand cmd = new SqlCommand("sp_TBL_ClassSem", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@action", "insert");
-            cmd.Parameters.AddWithValue("@State_Name",ddlState.SelectedItem.Text);
-            cmd.Parameters.AddWithValue("@City_Name", txtcity.Text);
-            cmd.Parameters.AddWithValue("@Sid", ddlState.SelectedValue);
+            cmd.Parameters.AddWithValue("@action", "insert");            
+            cmd.Parameters.AddWithValue("@Fin_Year", ddlFyear.SelectedItem.Text);
+            cmd.Parameters.AddWithValue("@Class", ddlclass.SelectedItem.Text);
+            cmd.Parameters.AddWithValue("@Class_year", txtyear.Text);
+            cmd.Parameters.AddWithValue("@Class_Description", txtdescription.Text);
+            cmd.Parameters.AddWithValue("@cl_Id", ddlclass.SelectedValue);
             cmd.ExecuteNonQuery();
             con.Close();
             Fill_Grid();
-            ClearControlls();
         }
-
-        protected void grd_RowCommand(object sender, GridViewCommandEventArgs e)
-        {
-
-        }
-
+      
     }
 }

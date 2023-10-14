@@ -11,17 +11,35 @@ namespace School_Management_Project
 {
 
 
-    public partial class State
+    public partial class FeeSubmission
     {
 
         /// <summary>
-        /// txtstatname control.
+        /// ddlFyear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtstatname;
+        protected global::System.Web.UI.WebControls.DropDownList ddlFyear;
+
+        /// <summary>
+        /// ddlclass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlclass;
+
+        /// <summary>
+        /// txtRegName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtRegName;
 
         /// <summary>
         /// btnsave control.

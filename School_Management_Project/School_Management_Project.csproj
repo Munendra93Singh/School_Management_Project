@@ -63,9 +63,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddClass.aspx" />
+    <Content Include="AddYearCat.aspx" />
     <Content Include="AdmissionForm.aspx" />
     <Content Include="Admissionview.aspx" />
     <Content Include="ApplicationForm.aspx" />
+    <Content Include="assets\css\css1.css" />
     <Content Include="assets\css\styles.css" />
     <Content Include="assets\demo\demo-index.js" />
     <Content Include="assets\demo\demo-switcher.js" />
@@ -158,6 +160,19 @@
     <Content Include="Dashboard.aspx" />
     <Content Include="EnqForm.aspx" />
     <Content Include="FeeComponent.aspx" />
+    <Content Include="FeeSubmission.aspx" />
+    <Content Include="images\-view-details %282%29.png" />
+    <Content Include="images\College.jpg" />
+    <Content Include="images\delete.png" />
+    <Content Include="images\edit.png" />
+    <Content Include="images\logo.jpg" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\PhotoGraph.png" />
+    <Content Include="images\print.png" />
+    <Content Include="images\search.png" />
+    <Content Include="images\SignID.png" />
+    <Content Include="images\UpdateProgress.gif" />
+    <Content Include="images\view-details.png" />
     <Content Include="Img\logo.jpg" />
     <Content Include="Img\delete.jpg" />
     <Content Include="Img\Delete.png" />
@@ -200,6 +215,13 @@
     </Compile>
     <Compile Include="AddClass.aspx.designer.cs">
       <DependentUpon>AddClass.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddYearCat.aspx.cs">
+      <DependentUpon>AddYearCat.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddYearCat.aspx.designer.cs">
+      <DependentUpon>AddYearCat.aspx</DependentUpon>
     </Compile>
     <Compile Include="AdmissionForm.aspx.cs">
       <DependentUpon>AdmissionForm.aspx</DependentUpon>
@@ -263,6 +285,13 @@
     </Compile>
     <Compile Include="FeeComponent.aspx.designer.cs">
       <DependentUpon>FeeComponent.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FeeSubmission.aspx.cs">
+      <DependentUpon>FeeSubmission.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FeeSubmission.aspx.designer.cs">
+      <DependentUpon>FeeSubmission.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

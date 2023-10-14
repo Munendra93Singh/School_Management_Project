@@ -11,7 +11,7 @@ namespace School_Management_Project
 {
 
 
-    public partial class FeeSubmissionComponent
+    public partial class AddYearCat
     {
 
         /// <summary>
@@ -24,49 +24,22 @@ namespace School_Management_Project
         protected global::System.Web.UI.WebControls.DropDownList ddlFyear;
 
         /// <summary>
-        /// ddlFeeMode control.
+        /// ddlclass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlFeeMode;
+        protected global::System.Web.UI.WebControls.DropDownList ddlclass;
 
         /// <summary>
-        /// txtCompName control.
+        /// txtyear control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCompName;
-
-        /// <summary>
-        /// txtamount control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtamount;
-
-        /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-
-        /// <summary>
-        /// btncancel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btncancel;
+        protected global::System.Web.UI.WebControls.TextBox txtyear;
 
         /// <summary>
         /// txtdescription control.
@@ -76,5 +49,32 @@ namespace School_Management_Project
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtdescription;
+
+        /// <summary>
+        /// btnsave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnsave;
+
+        /// <summary>
+        /// btnCacel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnCacel;
+
+        /// <summary>
+        /// ListView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView ListView;
     }
 }
