@@ -22,11 +22,6 @@
                                 <div class="form-group col-lg-2">
                                     <lebal for="dept" class="reqinput">Fin. Year:</lebal>
                                     <asp:DropDownList ID="ddlFyear" runat="server" TabIndex="1" class="form-control inlineDisplay" required="" Style="width: 100%">
-                                        <asp:ListItem Text="Select" Value="Select"></asp:ListItem>
-                                        <asp:ListItem Text="2020-2021" Value="2020-2021"></asp:ListItem>
-                                        <asp:ListItem Text="2022-2023" Value="2022-2023"></asp:ListItem>
-                                        <asp:ListItem Text="2023-2024" Value="2023-2024"></asp:ListItem>
-                                        <asp:ListItem Text="2024-2025" Value="2024-2025"></asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
 

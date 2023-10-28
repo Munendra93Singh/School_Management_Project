@@ -97,11 +97,42 @@ namespace School_Management_Project
             Fill_Grid();
             ClearControlls();
         }
-
-        protected void grd_RowCommand(object sender, GridViewCommandEventArgs e)
+        
+        protected void ListView1_ItemCommand(object sender, ListViewCommandEventArgs e)
         {
 
         }
 
+        protected void ListView1_ItemEditing(object sender, ListViewEditEventArgs e)
+        {
+            ListView1.EditIndex = e.NewEditIndex;
+            Fill_Grid();
+        }
+
+        protected void ListView1_ItemDeleting(object sender, ListViewDeleteEventArgs e)
+        {
+            try
+            {
+                // Here 'e.ItemIndex' gets the index of the item being deleted.
+                ListViewItem item = ListView1.Items[e.ItemIndex];
+                HiddenField hfEmployeeID = (HiddenField)item.FindControl("hfEmployeeID");
+
+                string strConnection = @"Data Source = .; Initial Catalog = DB_SHOOLMANAGEMENT; Integrated Security= true;";
+                SqlConnection con = new SqlConnection(strConnection);
+
+                SqlCommand cmd = new SqlCommand();
+                // delete query.
+                cmd.CommandText = @"delete from TBL_City where Cid = '" + hfEmployeeID.Value + "'";
+                cmd.CommandType = CommandType.Text;
+                cmd.Connection = con;
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+                con.Close();
+                Fill_Grid();
+            }
+            catch (Exception ex) { throw ex; }
+
+        }
     }
 }

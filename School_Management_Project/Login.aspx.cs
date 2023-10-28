@@ -7,6 +7,10 @@ using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Web.Security;
+using System.Configuration.Provider;
+using System.Xml.Linq;
+
 
 namespace School_Management_Project
 {
@@ -16,34 +20,34 @@ namespace School_Management_Project
    
         protected void Page_Load(object sender, EventArgs e)
         {
-
+           
         }
 
-        protected void btnsave_Click(object sender, EventArgs e)
+        protected void btnsav_Click(object sender, EventArgs e)
         {
             try
             {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("select * from Hr_admin where UserName = @lname and pwd = @pwd", con);
+                SqlCommand cmd = new SqlCommand("select * from oe_members where UserName = @lname and pwd = @pwd", con);
                 cmd.Parameters.Add("@lname", SqlDbType.VarChar, 10).Value = txtemail.Text;
                 cmd.Parameters.Add("@pwd", SqlDbType.VarChar, 10).Value = txtpass.Text;
 
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                 {
-                    Session.Add("hid", dr["hid"]);
+                    Session.Add("mid", dr["mid"]);
                     Session.Add("fullname", dr["fullname"]);
                     Session.Add("UserName", txtemail.Text.Trim());
                     Session.Add("dlv", dr["dlv"]);
                     // update MEMBERS table for DLV
                     dr.Close();
-                    cmd.CommandText = "update Hr_admin set dlv = getdate() where UserName = @lname";
+                    cmd.CommandText = "update oe_members set dlv = getdate() where UserName = @lname";
                     cmd.ExecuteNonQuery();
                     Response.Redirect("Dashboard.aspx");
                 }
                 else
                 {
-                    lblMsg.Text = "Invalid Login-Please Try Agaian!";
+                    lblMsg.Text = "Invalid Login!";
                     dr.Close();
                 }
 

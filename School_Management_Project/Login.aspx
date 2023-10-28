@@ -5,14 +5,19 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title>SCHOOL MANAGEMENT</title>
-
     <link href="Assent/login/font-awesome.min.css" rel="stylesheet" />
+    <link href="assets/css/css1.css" rel="stylesheet" />
     <script type="text/javascript">
-            $(document).ready(function () {
-                $("#btnsave_Click").click(function () {
-                  alert("Done !!");
-              });
-          });
+        $(document).ready(function () {
+            $("#btnsave_Click").click(function () {
+                alert("Done !!");
+            });
+        });
+  
+        //window.history.forward();
+        //function noBack() {
+        //    window.history.forward();
+        //}
     </script>
 
     <style>
@@ -30,19 +35,16 @@
         }
 
 
-        h2 {
-            color: rgba(255,255,255,.8);
-            margin-left: 12px;
-        }
+       
 
         body {
             /*BACKGROUND-COLOR: whitesmoke;*/
-            background-image: url("/login/img/bg-1.jpg");
+            background-image: url("/login/img/img1.jpg");
             font-family: 'Roboto', sans-serif;
         }
 
         form {
-            background-color: #04020cd1;
+            background-color: #5c4e68;
             position: relative;
             margin: 50px auto;
             width: 380px;
@@ -68,31 +70,9 @@
                 color: #e74c3c;
             }
 
-        button {
-            float: right;
-            height: 121px;
-            width: 50px;
-            border: 0px;
-            background: #e74c3c;
-            border-radius: 7px;
-            padding: 10px;
-            color: white;
-            font-size: 22px;
-        }
+       
 
-        .inputUserIcon {
-            position: absolute;
-            top: 68px;
-            right: 80px;
-            color: #e74c3c;
-        }
-
-        .inputPassIcon {
-            position: absolute;
-            top: 136px;
-            right: 80px;
-            color: #e74c3c;
-        }
+       
 
         input::-webkit-input-placeholder {
             color: white;
@@ -121,19 +101,12 @@
 
 </head>
 <body>
-    <%-- <div align="center" style="vertical-align: middle">
-                <span class="style1"><span class="style6">
-                    <img src="login/img/logo.svg" alt="" style="text-decoration: none; border-style: none; width: 280px; height: 50px;" />
-                    <h2>Ometices Digital & Marketing Pvt. Ltd.</h2>
-                    <span class="style4">
-                    </span></span>
-            </div>--%>
     <form id="form1" runat="server">
 
 
-        <div class="container" style="height: 440px; border: groove;">
+        <div class="container" style="height: 440px;">
             <div class="row">
-                <div style="padding-top: 5%;">
+                <div style="padding-top: 10%;">
                     <h1 style="text-align: center; color: white">
                         <img src="login/img/admin.png" style="width: 55px" />
                     </h1>
@@ -157,15 +130,20 @@
                             </tr>
                             <tr>
                                 <td>
-                                    <asp:Button ID="btnsave" runat="server" Style="background-color: #e74c3c" Text="Login" class="entypo-lock" OnClick="btnsave_Click" /></td>
+                                    <asp:Button ID="btnsave" runat="server" Style="background-color: #e74c3c" Text="Login" class="entypo-lock" OnClick="btnsav_Click" /></td>
                             </tr>
-                           <%-- <tr>
+                            </table>
+
+                            <%-- <tr>
                                 <td>
                                     <asp:LinkButton ID="LinkButton1" runat="server">Create  New Account.!</asp:LinkButton>
-                                    <asp:LinkButton ID="Linkbutton" runat="server" Style="padding-left: 53px">Forgot Password.?</asp:LinkButton></td>
+                                    <asp:LinkButton ID="Linkbutton" runat="server" Style="padding-left: 53px">Forgot Password.?</asp:LinkButton>
+                                </td>
                             </tr>--%>
-                        </table><span style="color: saddlebrown">
-                        <asp:Label ID="lblMsg" runat="server"></asp:Label></span><br />
+                            <span style="color: saddlebrown">
+                                <asp:Label ID="lblMsg" runat="server"></asp:Label>
+                            </span>
+                            <br />
                     </form>
                 </div>
             </div>

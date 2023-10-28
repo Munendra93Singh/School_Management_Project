@@ -243,10 +243,11 @@
                   </div>
                 <!-- logo-area -->
 
-                <ul class="nav navbar-nav toolbar pull-right">
-
-                    <li class="toolbar-icon-bg visible-xs-block" id="trigger-toolbar-search">
-                        <a href="#"><span class="icon-bg"><i class="ti ti-search"></i></span></a>
+                <ul class="nav navbar-nav toolbar pull-right">                
+                    <li class="toolbar-icon-bg" style=" margin-top: 19px; font-family: initial;">
+                           <td class="newsredText" style="color:#fdaa46; text-align:right;">
+                                <asp:Label ID="lbluser" runat="server" style="color:#F9FAFB" ></asp:Label>
+                           </td>     
                     </li>
                     
 
@@ -258,21 +259,13 @@
                         <a href="#" class="dropdown-toggle username" data-toggle="dropdown">
                             <img class="img-circle" src="login/img/admin.png" alt="" /> </a>
                         <ul class="dropdown-menu userinfo arrow">
-
-                            <!--<li><a href="#/"><i class="ti ti-user"></i><span>Profile</span><span class="badge badge-info pull-right">80%</span></a></li>-->
                             <li><a href="#/"><i class="ti ti-panel"></i><span>Account</span></a></li>
-                            <!--	<li><a href="#/"><i class="ti ti-settings"></i><span>Settings</span></a></li>
-				<li class="divider"></li>
-				<li><a href="#/"><i class="ti ti-stats-up"></i><span>Earnings</span></a></li>
-				<li><a href="#/"><i class="ti ti-view-list-alt"></i><span>Statement</span></a></li>
-				<li><a href="#/"><i class="ti ti-money"></i><span>Withdrawals</span></a></li>
-				<li class="divider"></li>-->
+                      
                             <li>
-                                <asp:LinkButton ID="lnkbtnlogout" Text="Sign Out" class="ti ti-shift-right" runat="server"></asp:LinkButton>
-                                <%--<asp:LinkButton ID="btnLogout" Text="Sign Out" runat="server" class="ti ti-shift-right"  OnClick="btnLogout_Click">nbnbn</asp:LinkButton>--%>
-                                <%--<asp:Button ID="btnLogout" Text="Sign Out" runat="server" class="ti ti-shift-right"  OnClick="btnLogout_Click"/>--%>
-                                <%--<i class="ti ti-shift-right"></i><span>Sign Out</span>
-                                --%></li>
+                                    <asp:HyperLink ID="h1logout" Text="Sign Out" class="ti ti-shift-right" runat="server" NavigateUrl="Logout.aspx"  Font-Underline="false"></asp:HyperLink>
+                             
+                             </li>
+
 
                         </ul>
                     </li>
@@ -293,14 +286,10 @@
                                                 <img src="login/img/admin.png" class="img-responsive img-circle" style="    max-width: 50%;">
                                             </div>
                                             <div class="info">
-                                                <span class="username">Welcome</span>
-                                                <asp:Label ID="vendarmesseg" runat="server" Visible="true"></asp:Label>
+                                                <span class="username">Welcome</span><br />
                                                 <span class="useremail">
-                                                    <table width="100%" ><tr>                                                         
-                                                      <td class="newsredText" style="color:#fdaa46; text-align:right;">
-                                                            <asp:Label ID="lbluser" runat="server" style="float: left; color:#F9FAFB" ></asp:Label></td>                                                       
-                                                       </tr>   
-                                                        <%--<tr> <td><a href="#"><i class="fa fa-circle text-success"></i>Online</a></td></tr>--%>
+                                                    <table width="100%" >
+                                                        <tr> <td><a href="#"><i class="fa fa-circle text-success"> </i>Online</a></td></tr>
                                                     </table>
                                                 </span>
                                             </div>
@@ -338,29 +327,18 @@
                                                     <li><a href=".aspx">Result Student</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a><i class="fa fa-user "></i><span>Employee</span></a>
+                                            <li><a><i class="fa fa-user "></i><span>Attendace</span></a>
                                                 <ul class="acc-menu">
-                                                    <li><a href="#">Add EMployee</a></li>
-                                                   <%-- <li><a href="#">Add Role/Designation</a></li>
-                                                    <li><a href="#">PayRoll Details</a></li>
-                                                    <li><a href="#">Additional Payment/Ded.</a></li>--%>
-                                                     <li><a href="#">Empl. Payment Details</a></li>
-                                                     <li><a href="#">Employee Separation</a></li>
+                                                    <li><a href="#">Student</a></li>                                                  
+                                                     <li><a href="#">Teacher</a></li>
+                                                     <li><a href="#">others</a></li>
                                                 </ul>
                                             </li>
-                                           <%-- <li><a href="javascript:;"><i class="fa fa-files-o"></i><span>Accounts</span></a>
-                                                <ul class="acc-menu">
-                                                    <li><a href=".aspx">Account Ledger</a></li>
-                                                    <li><a href=".aspx">Journal Voucher</a></li>
-                                                    <li><a href=".aspx">Ledger balance</a></li>
-                                                    <li><a href=".aspx">Search Journal Voucher</a></li>
-                                                     <li><a href=".aspx">Cheq/Card/NEFT Details</a></li>
-                                                     <li><a href=".aspx">Adjust Misc Fee</a></li>
-                                                     <li><a href=".aspx">Finance Reports</a></li>
-                                                     
-                                                </ul>
-                                            </li>--%>
-                                            <li><a href="javascript:;"><i class="fa fa-database""></i><span>Reports</span></a>
+                                          
+                                            <li hidden="hidden">
+                                                <a href="javascript:;" >
+                                                    <i class="fa fa-database"">
+                                                    </i><span>Reports</span></a>
                                                 <ul class="acc-menu">
                                                     <li><a href=".html">Admin/Enquiry/Reg. Details</a></li>
                                                     <li><a href=".html">Pending Fees Reports</a></li>
@@ -373,26 +351,17 @@
 
                                                 </ul>
                                             </li>
-
-                                           <%--  <li><a href="javascript:;"><i class="fa fa-files-o"></i><span>Notice</span></a>
-                                                <ul class="acc-menu">
-                                                    <li><a href=".html">Notic For Student</a></li>
-                                                    <li><a href=".html">Notic For Teacher</a></li>
-                                                    <li><a href=".html">Notic For Management</a></li>
-
-                                                </ul>
-                                            </li>--%>
-
                                             
+                                            <li hidden="hidden">
+                                                <a href="javascript:;" >
+                                                    <i class="fa fa-database"">
+                                                    </i><span>Test</span></a>
+                                                <ul class="acc-menu">
+                                                    <li><a href=".html">Student</a></li>
+                                                    <li><a href=".html">Teachers</a></li>                                                   
 
-                                              <%--<li><a href="javascript:;"><i class="fa fa-files-o"></i><span>Management Massage</span></a>
-                                               <ul class="acc-menu">
-                                                    <li><a href=".html">A</a></li>
-                                                    <li><a href=".html">B</a></li>
-                                                    <li><a href=".html">C</a></li>
                                                 </ul>
-                                            </li>--%>
-
+                                            </li>
                                            
                                             </ul>
                                     </nav>

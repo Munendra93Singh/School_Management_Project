@@ -18,34 +18,24 @@ namespace School_Management_Project
         {
             if (!IsPostBack)
             {
-                Fill_Country(ddlclass);
+                Fill_Class(ddlclass);
+                Bind_ddlfin(ddlFyear);
                 Fill_Grid();
-                
-            }
-        }
 
+            }           
+
+        }
         public void Fill_Grid()
-        {
+        {         
             con.Open();
-            SqlCommand cmd = new SqlCommand("sp_TBL_fee", con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@action", "show");
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            SqlDataAdapter da = new SqlDataAdapter("select * from TBL_AdmissionStudent", con);
             DataSet ds = new DataSet();
             da.Fill(ds);
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                ListView1.DataSource = ds;
-                ListView1.DataBind();
-            }
-            else
-            {
-                ListView1.DataSource = null;
-                ListView1.DataBind();
-            }
-            con.Close();
+            ListView1.DataSource = ds;
+            ListView1.DataBind();
         }
-        public void Fill_Country(DropDownList ddl)
+       
+               public void Fill_Class(DropDownList ddl)
         {
             if (con.State == ConnectionState.Open)
             {
@@ -75,6 +65,20 @@ namespace School_Management_Project
 
         }
 
+        public void Bind_ddlfin(DropDownList ddl)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select FYear,Fy_Id from TBL_FYear", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            ddlFyear.DataSource = dr;
+            ddlFyear.Items.Clear();
+            ddlFyear.Items.Add("--Please Select country--");
+            ddlFyear.DataTextField = "FYear";
+            ddlFyear.DataValueField = "Fy_Id";
+            ddlFyear.DataBind();
+            con.Close();
+        }
+
         protected void btnsave_Click1(object sender, EventArgs e)
         {
             con.Open();
@@ -85,8 +89,31 @@ namespace School_Management_Project
             cmd.Parameters.AddWithValue("@Class", ddlclass.SelectedItem.Text);
             cmd.Parameters.AddWithValue("@St_RegName", txtRegName.Text);
             cmd.ExecuteNonQuery();
+            {
+                string message = "Your details have been saved successfully.";
+                string script = "window.onload = function(){ alert('";
+                script += message;
+                script += "')};";
+                ClientScript.RegisterStartupScript(this.GetType(), "SuccessMessage", script, true);
+            }
             con.Close();
             Fill_Grid();
+        }
+
+        protected void btn1_Click(object sender, EventArgs e)
+        {       
+            con.Open();
+            SqlDataAdapter da = new SqlDataAdapter("select * from TBL_AdmissionStudent where Studntname like '%" + txtRegName.Text + "%'", con);  
+        
+            DataSet ds = new DataSet();
+            da.Fill(ds);
+            ListView1.DataSource = ds;
+            ListView1.DataBind();
+            if (ListView1.Items.Count == 0)
+            {
+                lblmsg.Text = "No Records Found";
+                lblmsg.Visible = true;
+            }
         }
     }
 }

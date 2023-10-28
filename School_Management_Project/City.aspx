@@ -1,26 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ViewMasterPage.Master" AutoEventWireup="true" CodeBehind="City.aspx.cs" Inherits="School_Management_Project.City" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <script type="text/javascript">
-        function preventBack() { window.history.forward(); }
-        setTimeout("preventBack()", 1);
-        window.onunload = function () { null };
-    </script>
-    <script type="text/javascript">
-        function preventBack() { window.history.forward(); }
-        setTimeout("preventBack()", 1);
-        window.onunload = function () { null };
-    </script>
-    <script type="text/javascript">
-        function preventBack() { window.history.forward(); }
-        setTimeout("preventBack()", 1);
-        window.onunload = function () { null };
-    </script>
-    <script type="text/javascript">
-        function preventBack() { window.history.forward(); }
-        setTimeout("preventBack()", 1);
-        window.onunload = function () { null };
-    </script>
+   <script type="text/javascript">
+       // Confirmation before delete operation.
+       function deleteConfirm(sender) {
+           var c = confirm("Are you sure?");
+           if (c) { return true; } else { return false; }
+       }
+   </script>
 
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -72,8 +59,8 @@
                                         <h2>State Name</h2>
                                         <div class=" col-md-3" style="float: right">
                                             <%-- <label for="name">Search:</label>--%>
-                                            <input name="ctl00$ContentPlaceHolder1$tbSearch" type="text" id="Text1" tabindex="32" class="form-control inlineDisplay" placeholder="Search" style="width: 180px;">
-                                            <input type="image" name="ImageButton1" id="Image2" tabindex="33" class="imagebtn" formnovalidate="" src="../Img/search.png" style="height: 30px; width: 30px; position: relative; top: 7px">
+                                            <input name="ctl00$ContentPlaceHolder1$tbSearch" type="text" id="Text1" tabindex="32" class="form-control inlineDisplay" placeholder="Search" style="width: 180px;"/>
+                                            <input type="image" name="ImageButton1" id="Image2" tabindex="33" class="imagebtn" formnovalidate="" src="../Img/search.png" style="height: 30px; width: 30px; position: relative; top: 7px"/>
                                         </div>
                                         <div class="panel-heading">
                                         </div>
@@ -82,12 +69,13 @@
                                     <div class="panel-body">
                                         <div style="height: 230px; overflow: auto">
                                             <table style="background-color: white">
-                                                <asp:ListView ID="ListView1" runat="server">
+                                                <asp:ListView ID="ListView1" runat="server" OnItemCommand="ListView1_ItemCommand" OnItemEditing="ListView1_ItemEditing" OnItemDeleting="ListView1_ItemDeleting">
                                                     <LayoutTemplate>
                                                         <table class="TableCSS table-bordered">
                                                             <tr class="TableHeader">
                                                                 <td>Edit</td>
                                                                 <td>Delete</td>
+                                                                <td>Sr.No</td>
                                                                 <td>State</td>
                                                                 <td>City</td>
                                                             </tr>
@@ -104,9 +92,11 @@
                                                                 </a>
                                                             </td>
                                                             <td>
-                                                                <a href='Writereaddata/<%# Eval("Cid") %>' target="_blank">
-                                                                    <asp:Image ID="Image3" runat="server" ImageUrl="~/Img/delete.jpg" Height="25px" Width="29px" />
-                                                                </a>
+                                                                <asp:Button ID="btnDelete" runat="server" Text="Delete" CommandName="Delete" OnClientClick="return deleteConfirm();" />
+                                                            </td>
+                                                             <td>
+                                                                <%# Container.DataItemIndex + 1%>
+                                                                <asp:HiddenField ID="hfEmployeeID" runat="server" Value='<%#Eval("Cid") %>' />
                                                             </td>
                                                             <td>
                                                                 <asp:Label ID="Label1"  runat="server" Text='<%# Eval("State_Name")%>'>   
@@ -126,9 +116,11 @@
                                                                 </a>
                                                             </td>
                                                             <td>
-                                                                <a href='Writereaddata/<%# Eval("Cid") %>' target="_blank">
-                                                                    <asp:Image ID="Image3" runat="server" ImageUrl="~/Img/delete.jpg" Height="25px" Width="29px" />
-                                                                </a>
+                                                                <asp:Button ID="btnDelete" runat="server" Text="Delete" CommandName="Delete" OnClientClick="return deleteConfirm();" />
+                                                            </td>
+                                                             <td>
+                                                                <%# Container.DataItemIndex + 1%>
+                                                                <asp:HiddenField ID="hfEmployeeID" runat="server" Value='<%#Eval("Cid") %>' />
                                                             </td>
                                                             <td>
                                                                 <asp:Label ID="Label1" runat="server" Text='<%# Eval("State_Name")%>'>   

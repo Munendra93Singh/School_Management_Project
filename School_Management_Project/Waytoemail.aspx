@@ -122,7 +122,7 @@
                                 <div class="panel-body">
                                     <div class="form-horizontal row-border">
                                         <div class="widget-content no-padding">
-                                            <asp:ListView ID="grd" runat="server" DataSourceID="SqlDataSource1">
+                                            <asp:ListView ID="grd" runat="server" >
                                                 <LayoutTemplate>
                                                     <table id="Table1" runat="server" class="TableCSS">
                                                         <tr id="Tr1" runat="server" class="TableHeader">

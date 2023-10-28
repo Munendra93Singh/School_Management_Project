@@ -19,7 +19,8 @@ namespace School_Management_Project
             
             if (!IsPostBack)
             {
-                Fill_Class(ddlclass);              
+                Fill_Class(ddlclass);
+                Bind_ddlfin(ddlFyear);
             }
             Fill_Grid();
 
@@ -72,6 +73,19 @@ namespace School_Management_Project
                 ddl.DataSource = null;
                 ddl.DataBind();
             }
+            con.Close();
+        }
+        public void Bind_ddlfin(DropDownList ddl)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select FYear,Fy_Id from TBL_FYear", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            ddlFyear.DataSource = dr;
+            ddlFyear.Items.Clear();
+            ddlFyear.Items.Add("--Please Select country--");
+            ddlFyear.DataTextField = "FYear";
+            ddlFyear.DataValueField = "Fy_Id";
+            ddlFyear.DataBind();
             con.Close();
         }
 

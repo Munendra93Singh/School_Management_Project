@@ -25,6 +25,7 @@ namespace School_Management_Project
                 Fill_Class(ddladdclas);
                 //Fill_Classyear(ddlclassyear);               
                 Fill_State(ddlstate);
+                Bind_ddlfin(ddlFyear);
                 Fill_Grid();
                 ClearControlls();
                 //generatesno();
@@ -34,7 +35,7 @@ namespace School_Management_Project
 
         public void ClearControlls()
         {
-            ddlFinyear.SelectedValue = "";
+           
             txtRollnumber.Text = "";
             txtstatus.Text = "";
             txtenrlonuber.Text = "";
@@ -102,6 +103,20 @@ namespace School_Management_Project
                 ListView1.DataSource = null;
                 ListView1.DataBind();
             }
+            con.Close();
+        }
+
+        public void Bind_ddlfin(DropDownList ddl)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select FYear,Fy_Id from TBL_FYear", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            ddlFyear.DataSource = dr;
+            ddlFyear.Items.Clear();
+            ddlFyear.Items.Add("--Please Select country--");
+            ddlFyear.DataTextField = "FYear";
+            ddlFyear.DataValueField = "Fy_Id";
+            ddlFyear.DataBind();
             con.Close();
         }
         //private void generatesno()
@@ -187,7 +202,7 @@ namespace School_Management_Project
             }
             con.Close();
         }        
-       public void Bind_ddlClassyear()
+        public void Bind_ddlClassyear()
         {
             if (con.State == ConnectionState.Open)
             {
@@ -206,7 +221,6 @@ namespace School_Management_Project
             con.Close();
 
         }
-
         public void Bind_ddlclaasfees()
         {
             if (con.State == ConnectionState.Open)
@@ -225,8 +239,6 @@ namespace School_Management_Project
             ddlclaasfees.DataBind();
             con.Close();
         }
-
-
         public void Fill_State(DropDownList ddl)
         {
             if (con.State == ConnectionState.Open)
@@ -332,7 +344,7 @@ namespace School_Management_Project
                 SqlCommand cmd = new SqlCommand("sp_TBL_Admission", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@action", "insert");
-                cmd.Parameters.AddWithValue("@Yearname", ddlFinyear.SelectedValue);
+                cmd.Parameters.AddWithValue("@Yearname", ddlFyear.SelectedValue);
                 cmd.Parameters.AddWithValue("@Ragnumber", txtRollnumber.Text);
                 cmd.Parameters.AddWithValue("@Stname", txtstatus.Text);
                 cmd.Parameters.AddWithValue("@Enrolname", txtenrlonuber.Text);
@@ -355,6 +367,8 @@ namespace School_Management_Project
                 cmd.Parameters.AddWithValue("@pincode", txtpincode.Text);
                 cmd.Parameters.AddWithValue("@imageupload", load);
                 cmd.Parameters.AddWithValue("@classyear", ddlclassyear.SelectedItem.Text);
+                cmd.Parameters.AddWithValue("ClassAmount", ddlclaasfees.SelectedItem.Text);
+                cmd.Parameters.AddWithValue("ClassPendingAmount", txtamount.Text);
                 cmd.ExecuteNonQuery();
                 {
                     //string message = "Your details have been saved successfully.";

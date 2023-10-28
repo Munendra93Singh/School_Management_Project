@@ -1,6 +1,13 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ViewMasterPage.Master" AutoEventWireup="true" CodeBehind="FeeComponent.aspx.cs" Inherits="School_Management_Project.FeeSubmissionComponent" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+      <script type="text/javascript">
+       // Confirmation before delete operation.
+       function deleteConfirm(sender) {
+           var c = confirm("Are you sure?");
+           if (c) { return true; } else { return false; }
+       }
+      </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="wrapper">
@@ -21,11 +28,6 @@
                                 <div class="form-group col-lg-2">
                                     <lebal for="dept" class="reqinput">Fin. Year:</lebal>
                                     <asp:DropDownList ID="ddlFyear" runat="server" TabIndex="1" class="form-control inlineDisplay" required="" Style="width: 100%">
-                                        <asp:ListItem Text="Select" Value="Select"></asp:ListItem>
-                                        <asp:ListItem Text="2023-2024" Value="2023-2024"></asp:ListItem>
-                                        <asp:ListItem Text="2024-2025" Value="2024-2025"></asp:ListItem>
-                                        <asp:ListItem Text="2025-2026" Value="2025-2026"></asp:ListItem>
-                                        <asp:ListItem Text="2026-2027" Value="2026-2027"></asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
 
@@ -46,7 +48,7 @@
                                 </div>
 
                                 <div class="form-group col-lg-3">
-                                    <lebal id="Td1" style="padding-bottom: 45px">Amount:</lebal>
+                                    <lebal id="Td1" style="padding-bottom: 45px">Component Amount:</lebal>
                                     <asp:TextBox ID="txtamount" runat="server" TabIndex="3" class="form-control inlineDisplay" size="40" placeholder="Please Enter Amount" required=""></asp:TextBox></td>
                                 </div>
 
@@ -75,6 +77,7 @@
                     </div>
                 </div>
 
+
                 <!-- ListView/.row -->
                 <div class="container-fluid">
                     <div style="visibility: visible; opacity: 1; display: block; transform: translateY(0px);" data-widget-static="" class="panel panel-default" data-widget="{&quot;draggable&quot;: &quot;false&quot;}">
@@ -91,13 +94,14 @@
                         <div class="panel-editbox" data-widget-controls=""></div>
                         <div class="panel-body">
                             <div style="height: 230px; overflow: auto">
-                                <table style="background-color: white">
-                                    <asp:ListView ID="ListView1" runat="server">
+                                <table style="background-color: white" >
+                                    <asp:ListView ID="ListView1" runat="server" OnItemDeleting="ListView1_ItemDeleting" OnItemCommand="ListView1_ItemCommand">
                                         <LayoutTemplate>
-                                            <table class="TableCSS table-bordered">
+                                            <table class="TableCSS table-bordered" >
                                                 <tr class="TableHeader">
                                                     <td>Edit</td>
                                                     <td>Delete</td>
+                                                     <td>Sr.No</td>
                                                     <td>Component Name</td>
                                                     <td>Amount/Fee</td>
                                                     <td>Fees Type/Semi</td>
@@ -111,23 +115,26 @@
                                         </LayoutTemplate>
                                         <ItemTemplate>
                                             <tr class="TableData">
-                                                <td>
-                                                    <a href='Writereaddata/<%# Eval("FEE_ID") %>' target="_blank">
+                                                <td>                                                    
+                                                    <a id="lnkbtnedit" <%# Eval("FEE_ID") %>' target="_blank">
                                                         <asp:Image ID="pdfimg" runat="server" ImageUrl="~/Img/edit.png" Height="25px" Width="29px" />
                                                     </a>
                                                 </td>
                                                 <td>
-                                                    <a href='Writereaddata/<%# Eval("FEE_ID") %>' target="_blank">
-                                                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Img/delete.jpg" Height="25px" Width="29px" />
-                                                    </a>
+                                                 <asp:Button ID="btnDelete" runat="server" Text="Delete" CommandName="Delete" OnClientClick="return deleteConfirm();" />
                                                 </td>
+                                                <td>
+                                                     <%# Container.DataItemIndex + 1%>
+                                                       <asp:HiddenField ID="hfEmployeeID" runat="server" Value='<%#Eval("FEE_ID") %>' />
+                                                  </td>
+                                              
                                                 <td>
                                                     <asp:Label ID="Label1" runat="server" Text='<%# Eval("CLASS_COMP")%>'>   
                                                     </asp:Label>
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label2" runat="server" Text='<%# Eval("FEE_AMOUNT")%>'>   
-                                                    </asp:Label>
+                                                    </asp:Label>.00
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label3" runat="server" Text='<%# Eval("FEES_TYPE")%>'>   
@@ -145,23 +152,27 @@
                                         </ItemTemplate>
                                         <AlternatingItemTemplate>
                                             <tr class="TableData" style="background-color: #dadada;">
-                                                <td>
+                                               <td>
                                                     <a href='Writereaddata/<%# Eval("FEE_ID") %>' target="_blank">
                                                         <asp:Image ID="pdfimg" runat="server" ImageUrl="~/Img/edit.png" Height="25px" Width="29px" />
                                                     </a>
                                                 </td>
-                                                <td>
-                                                    <a href='Writereaddata/<%# Eval("FEE_ID") %>' target="_blank">
-                                                        <asp:Image ID="Image1" runat="server" ImageUrl="~/Img/delete.jpg" Height="25px" Width="29px" />
-                                                    </a>
-                                                </td>
+                                            
+                                               <td>
+                                                  <asp:Button ID="btnDelete" runat="server" Text="Delete" CommandName="Delete" OnClientClick="return deleteConfirm();" />
+                                              </td>
+                                               <td>
+                                                <%# Container.DataItemIndex + 1%>
+                                                   <asp:HiddenField ID="hfEmployeeID" runat="server" Value='<%#Eval("FEE_ID") %>' />
+                                                     </td>
+                                              
                                                 <td>
                                                     <asp:Label ID="Label1" runat="server" Text='<%# Eval("CLASS_COMP")%>'>   
                                                     </asp:Label>
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label2" runat="server" Text='<%# Eval("FEE_AMOUNT")%>'>   
-                                                    </asp:Label>
+                                                    </asp:Label>.00
                                                 </td>
                                                 <td>
                                                     <asp:Label ID="Label3" runat="server" Text='<%# Eval("FEES_TYPE")%>'>   

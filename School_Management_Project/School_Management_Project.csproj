@@ -181,14 +181,13 @@
     <Content Include="Img\icon-Cancel.png" />
     <Content Include="Img\icon-edit.png" />
     <Content Include="Img\icon-update.png" />
-    <Content Include="Img\MAHI.jpg" />
     <Content Include="Img\search.png" />
     <Content Include="Login.aspx" />
     <Content Include="login\font-awesome.min.css" />
     <Content Include="login\img\admin.png" />
     <Content Include="login\img\bg-1.jpg" />
     <Content Include="login\img\img1.jpg" />
-    <Content Include="login\img\img2.jpg" />
+    <Content Include="login\img\ism1.jpg" />
     <Content Include="login\img\logo.svg" />
     <Content Include="login\img\sprite_status_arrows1.jpg" />
     <Content Include="login\img\unknown.png" />
@@ -196,6 +195,7 @@
     <Content Include="login\jquery-1.10.2.js" />
     <Content Include="login\jquery-ui.js" />
     <Content Include="assets\css\msc.css" />
+    <Content Include="Logout.aspx" />
     <Content Include="obj\Debug\Project6917.csproj.FileListAbsolute.txt" />
     <Content Include="obj\Debug\Project6917.dll" />
     <Content Include="obj\Debug\Project6917.pdb" />
@@ -300,6 +300,13 @@
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
     <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
@@ -375,6 +382,7 @@
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="obj\Debug\Project6917.csprojResolveAssemblyReference.cache" />
     <Content Include="ViewMasterPage.Master" />
+    <Content Include="captcha.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

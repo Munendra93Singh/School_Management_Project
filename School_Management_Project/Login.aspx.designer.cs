@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace School_Management_Project {
-    
-    
-    public partial class Login {
-        
+namespace School_Management_Project
+{
+
+
+    public partial class Login
+    {
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// lbllogin control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lbllogin;
-        
+
         /// <summary>
         /// txtemail control.
         /// </summary>
@@ -38,7 +40,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtemail;
-        
+
         /// <summary>
         /// txtpass control.
         /// </summary>
@@ -47,7 +49,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtpass;
-        
+
         /// <summary>
         /// btnsave control.
         /// </summary>
@@ -56,7 +58,7 @@ namespace School_Management_Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnsave;
-        
+
         /// <summary>
         /// lblMsg control.
         /// </summary>

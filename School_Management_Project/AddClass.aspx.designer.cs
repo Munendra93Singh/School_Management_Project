@@ -24,13 +24,13 @@ namespace School_Management_Project
         protected global::System.Web.UI.WebControls.DropDownList ddlFyear;
 
         /// <summary>
-        /// ddlclass control.
+        /// txtaddclass control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlclass;
+        protected global::System.Web.UI.WebControls.TextBox txtaddclass;
 
         /// <summary>
         /// ddlyear control.

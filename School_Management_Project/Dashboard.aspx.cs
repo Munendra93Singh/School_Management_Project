@@ -11,6 +11,24 @@ namespace School_Management_Project
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!Page.IsPostBack)
+            {
+                string username = Convert.ToString(Session["UserName"]).Trim();
+                if (username == "")
+                {
+                    Server.Transfer("login.aspx");
+                   //Session.Abandon("Dashboard.aspx");
+                }
+                else
+                {
+
+                }
+            }
+
+        }
+
+        protected void ShowData()
+        {
 
         }
     }

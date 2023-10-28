@@ -14,7 +14,7 @@
                     changeMonth: true,
                     changeYear: true,
                     yearRange: '1950:2100',
-                    maxDate: 5,
+                    maxDate: 0,
 
                 });
         });
@@ -56,13 +56,7 @@
                                             <div class="form-group col-lg-9">
                                                 <div class="form-group col-lg-3">
                                                     <label for="dept">Fill Ragistration Year</label><span class="reqinput"></span>
-                                                    <asp:DropDownList ID="ddlFinyear" runat="server" TabIndex="1" class="form-control inlineDisplay" required="" Style="width: 88%;">
-                                                        <asp:ListItem Text="2021-2022" Value="2021-2022"></asp:ListItem>
-                                                        <asp:ListItem Text="2021-2022" Value="2021-2022"></asp:ListItem>
-                                                        <asp:ListItem Text="2022-2023" Value="2022-2023"></asp:ListItem>
-                                                        <asp:ListItem Text="2023-2024" Value="2023-2024"></asp:ListItem>
-                                                        <asp:ListItem Text="2024-2025" Value="2024-2025"></asp:ListItem>
-                                                        <asp:ListItem Text="2025-2025" Value="2025-2025"></asp:ListItem>
+                                                    <asp:DropDownList ID="ddlFyear" runat="server" TabIndex="1" class="form-control inlineDisplay" required="" Style="width: 88%;">
                                                     </asp:DropDownList>
                                                 </div>
                                                 <div class="form-group col-lg-3">
@@ -153,7 +147,7 @@
                                                     </asp:DropDownList>
                                                 </div>
 
-                                                <div class="form-group col-lg-4" hidden="hidden">
+                                                <div class="form-group col-lg-4">
                                                     <label for="dept">Marital Status:</label>
                                                     <asp:DropDownList ID="txtmaritalstatus" runat="server" class="form-control inlineDisplay" Style="width: 100%">
                                                         <asp:ListItem Text="Married" Value="Married"></asp:ListItem>
@@ -195,8 +189,8 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="form-group col-lg-12">                                              
-                                                  <div class="form-group col-lg-3">
+                                            <div class="form-group col-lg-12">
+                                                <div class="form-group col-lg-3">
                                                     <label for="dept">Academic Year:</label><span class="reqinput"></span>
                                                     <asp:DropDownList ID="ddlclaasfees" runat="server" TabIndex="16" class="form-control inlineDisplay" AutoPostBack="true" AppendDataBoundItems="true"></asp:DropDownList>
                                                 </div>
@@ -204,7 +198,7 @@
                                                     <label for="dept">Class Year/Class Type:</label><span class="reqinput"></span>
                                                     <asp:DropDownList ID="ddlclassyear" DataTextField="Year" runat="server" TabIndex="19" class="form-control inlineDisplay" Style="width: 200px;">
                                                     </asp:DropDownList>
-                                                </div>                                              
+                                                </div>
 
 
                                                 <div class="form-group col-lg-3">
@@ -215,7 +209,7 @@
                                                         <option value="Pending Payment">Pending Payment</option>
                                                     </select>
                                                 </div>
-                                                  <div class="form-group col-lg-3">
+                                                <div class="form-group col-lg-3">
                                                     <label for="dept">Amount:</label><span class="reqinput"></span>
                                                     <asp:TextBox ID="txtamount" runat="server" TabIndex="14" class="form-control inlineDisplay" placeholder="Amount" required="" Style="width: 80%"></asp:TextBox>
                                                 </div>
@@ -264,6 +258,7 @@
                                                     <table class="TableCSS table-bordered">
                                                         <tr class="TableHeader">
                                                             <td>Edit</td>
+                                                            <td>Check</td>
                                                             <td>Sr.No.</td>
                                                             <td>Ragistration No.</td>
                                                             <td>Student Name</td>
@@ -286,6 +281,9 @@
                                                             </a>
                                                         </td>
                                                         <td>
+                                                           <input type="checkbox" />
+                                                        </td>
+                                                        <td>
                                                             <asp:Label ID="Label12" runat="server" Text='<%# Eval("ADM_ID")%>'>   
                                                             </asp:Label>
                                                         </td>
@@ -298,8 +296,8 @@
                                                             </asp:Label>
                                                         </td>
                                                         <td>
-                                                            <%-- <asp:Label ID="Label3" runat="server" Text='<%# Eval("Mobile")%>'>   
-                                                                </asp:Label>--%>
+                                                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Rolnumber")%>'>   
+                                                            </asp:Label>
                                                         </td>
                                                         <td>
                                                             <asp:Label ID="Label4" runat="server" Text='<%# Eval("city")%>'>   
@@ -326,6 +324,9 @@
                                                                 <asp:Image ID="pdfimg" runat="server" ImageUrl="~/Img/edit.png" Height="25px" Width="29px" />
                                                             </a>
                                                         </td>
+                                                         <td>
+                                                           <input type="checkbox" />
+                                                        </td>
                                                         <td>
                                                             <asp:Label ID="Label12" runat="server" Text='<%# Eval("ADM_ID")%>'>   
                                                             </asp:Label>
@@ -339,8 +340,8 @@
                                                             </asp:Label>
                                                         </td>
                                                         <td>
-                                                            <%-- <asp:Label ID="Label3" runat="server" Text='<%# Eval("Mobile")%>'>   
-                                                                </asp:Label>--%>
+                                                            <asp:Label ID="Label3" runat="server" Text='<%# Eval("Rolnumber")%>'>   
+                                                            </asp:Label>
                                                         </td>
                                                         <td>
                                                             <asp:Label ID="Label4" runat="server" Text='<%# Eval("city")%>'>   

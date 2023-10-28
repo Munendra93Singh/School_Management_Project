@@ -41,3 +41,32 @@
     background-color: #c7d4f263;
 }
 
+.inputUserIcon {
+    position: absolute;
+    top: 68px;
+    right: 80px;
+    color: #e74c3c;
+}
+
+.inputPassIcon {
+    position: absolute;
+    top: 136px;
+    right: 80px;
+    color: #e74c3c;
+}
+button {
+    float: right;
+    height: 121px;
+    width: 50px;
+    border: 0px;
+    background: #e74c3c;
+    border-radius: 7px;
+    padding: 10px;
+    color: white;
+    font-size: 22px;
+}
+
+h2 {
+    color: rgba(255,255,255,.8);
+    margin-left: 12px;
+}

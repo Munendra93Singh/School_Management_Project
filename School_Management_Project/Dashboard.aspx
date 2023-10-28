@@ -27,7 +27,7 @@
                 <div class="color-palette-set">
                     <a href="#">
                         <span class="custom-social custom-social-image" style="background-color: #7d3b24">
-                            <span class="fa fa-university fa-4x">100</span>                            
+                            <span class="fa fa-university fa-4x"></span>                            
                             <br>
                             <br>
                             Total Student
@@ -43,7 +43,7 @@
                 <div class="color-palette-set">
                    <%-- <a href="State.aspx">--%>
                         <span class="custom-social custom-social-image" style="background-color: #6d1c7b;">
-                             <span class="fa fa-user fa-4x">40</span>
+                             <span class="fa fa-user fa-4x"></span>
                             <br>
                             <br>
                             Total Teacher
@@ -57,7 +57,7 @@
                 <div class="color-palette-set">
                     <a href="City.aspx">
                         <span class="custom-social custom-social-image" style="background-color: #3f51b5;">
-                            <span class="fa fa-book fa-4x">12</span>
+                            <span class="fa fa-book fa-4x"></span>
                             <br>
                             <br>
                            Total Class
@@ -70,7 +70,7 @@
                 <div class="color-palette-set">
                     <a href="State.aspx">
                         <span class="custom-social custom-social-image" style="background-color: #6d1c7b;">
-                            <span class="fa fa-globe fa-4x">48</span>
+                            <span class="fa fa-globe fa-4x"></span>
                             <br>
                             <br>
                             Total Subject
@@ -161,20 +161,7 @@
                             Search Student
                         </span></a>
                 </div>
-            </div>
-
-            <%--<div class="col-sm-4 col-md-2">
-                <h4 class="text-center"></h4>
-                <div class="color-palette-set">
-                    <a href="#">
-                        <span class="custom-social custom-social-image" style="background-color: #235973">
-                            <span class="fa fa-trash-o fa-4x"></span>
-                            <br>
-                            <br>
-                            Archive Records
-                        </span></a>
-                </div>
-            </div>--%>
+            </div>          
 
         </div>
         <br />
@@ -206,59 +193,6 @@
                     <br>
                 </div>
             </div>
-
-
-           <%-- <div class="col-sm-4 col-md-2">
-                <h4 class="text-center"></h4>
-                <div class="color-palette-set">
-                    <a href="#">
-                        <span class="custom-social custom-social-image" style="background-color: #3f51b5;">
-                            <span class="fa fa-book fa-4x"></span>
-                            <br>
-                            <br>
-                            Class
-                        </span></a>
-                </div>
-            </div>
-
-            <div class="col-sm-4 col-md-2">
-                <h4 class="text-center"></h4>
-                <div class="color-palette-set">
-                    <a href="#">
-                        <span class="custom-social custom-social-image" style="background-color: #6d1c7b;">
-                            <span class="fa fa-globe fa-4x"></span>
-                            <br>
-                            <br>
-                            State Master
-                        </span></a>
-                </div>
-            </div>
-
-            <div class="col-sm-4 col-md-2">
-                <h4 class="text-center"></h4>
-                <div class="color-palette-set">
-                    <a href="#">
-                        <span class="custom-social custom-social-image" style="background-color: #358838;">
-                            <span class="fa fa-home fa-4x"></span>
-                            <br>
-                            <br>
-                            City Master
-                        </span></a>
-                </div>
-            </div>
-
-            <div class="col-sm-4 col-md-2">
-                <h4 class="text-center"></h4>
-                <div class="color-palette-set">
-                    <a href="#">
-                        <span class="custom-social custom-social-image" style="background-color: #358838;">
-                            <span class="fa fa-home fa-4x"></span>
-                            <br>
-                            <br>
-                            City Master
-                        </span></a>
-                </div>
-            </div>--%>
 
 
             <!-- .container-fluid -->

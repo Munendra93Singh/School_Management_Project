@@ -20,6 +20,7 @@ namespace School_Management_Project
                 //    Fill_Amount(ddlAmount);
                 //ddlAmount.Items.Insert(0, new ListItem("--Select--", "0"));
                 Fill_Grid();
+                Bind_ddlfin(ddlFyear);
                 ClearControlls();
            }
         }
@@ -28,7 +29,7 @@ namespace School_Management_Project
             ddlFyear.SelectedValue = "";
             ddlyear.SelectedValue = "";
             txtamount.Text = "";
-            ddlclass.SelectedValue = "";
+            txtaddclass.Text = "";
             txtdescription.Text = "";
         }
 
@@ -54,6 +55,19 @@ namespace School_Management_Project
             con.Close();
         }
 
+        public void Bind_ddlfin(DropDownList ddl)
+        {
+            con.Open();
+            SqlCommand cmd = new SqlCommand("select FYear,Fy_Id from TBL_FYear", con);
+            SqlDataReader dr = cmd.ExecuteReader();
+            ddlFyear.DataSource = dr;
+            ddlFyear.Items.Clear();
+            ddlFyear.Items.Add("--Please Select country--");
+            ddlFyear.DataTextField = "FYear";
+            ddlFyear.DataValueField = "Fy_Id";
+            ddlFyear.DataBind();
+            con.Close();
+        }
 
         //public void Fill_Amount(DropDownList ddl)
         //{
@@ -93,7 +107,7 @@ namespace School_Management_Project
             cmd.Parameters.AddWithValue("@FYear", ddlFyear.SelectedValue);
             cmd.Parameters.AddWithValue("@ClassYear", ddlyear.SelectedValue);
             cmd.Parameters.AddWithValue("@ClassAmount", txtamount.Text);
-            cmd.Parameters.AddWithValue("@Class", ddlclass.SelectedValue);
+            cmd.Parameters.AddWithValue("@Class", txtaddclass.Text);
             cmd.Parameters.AddWithValue("@ClassDicription", txtdescription.Text);
             cmd.ExecuteNonQuery();
             con.Close();

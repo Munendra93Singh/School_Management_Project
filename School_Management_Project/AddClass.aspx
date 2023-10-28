@@ -10,37 +10,24 @@
                 <div class="page-content">
                     <ol class="breadcrumb">
                         <li><a href="Dashboard.aspx">Dashboard</a></li>
-                        <li class="active"><a>Add Class Form</a></li>
+                        <li class="active"><a>Add Class Master</a></li>
                     </ol>
                     <div class="container-fluid">
                         <div style="visibility: visible; opacity: 1; display: block; transform: translateY(0px);" data-widget-static="" class="panel panel-default" data-widget="{&quot;draggable&quot;: &quot;false&quot;}">
                             <div class="panel-heading">
-                                <h2>Class Master</h2>
+                                <h2>Add Class Master</h2>
                             </div>
                             <div class="panel-editbox" data-widget-controls=""></div>
                             <div class="col-lg-12">
                                 <div class="form-group col-lg-2">
                                     <lebal for="dept" class="reqinput">Fin. Year:</lebal>
                                     <asp:DropDownList ID="ddlFyear" runat="server" TabIndex="1" class="form-control inlineDisplay" required="" Style="width: 100%">
-                                        <asp:ListItem Text="Select" Value="Select"></asp:ListItem>
-                                        <asp:ListItem Text="2020-2021" Value="2020-2021"></asp:ListItem>
-                                        <asp:ListItem Text="2022-2023" Value="2022-2023"></asp:ListItem>
-                                        <asp:ListItem Text="2023-2024" Value="2023-2024"></asp:ListItem>
-                                        <asp:ListItem Text="2024-2025" Value="2024-2025"></asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
 
                                 <div class="form-group col-lg-4">
                                     <lebal id="Td2" class="reqinput">Class:</lebal>
-                                    <asp:DropDownList ID="ddlclass" runat="server" TabIndex="1" class="form-control inlineDisplay" required="" Style="width: 100%">
-                                        <asp:ListItem Text="Select" Value="Select"></asp:ListItem>
-                                        <asp:ListItem Text="Bachelors in Journalism & Mass Communication" Value="Bachelors in Journalism & Mass Communication"></asp:ListItem>
-                                        <asp:ListItem Text="Master in Mass Communication" Value="Master in Mass Communication"></asp:ListItem>
-                                        <asp:ListItem Text="Post Graduate Diploma in Broadcast Journalism" Value="Post Graduate Diploma in Broadcast Journalism"></asp:ListItem>
-                                        <asp:ListItem Text="Post Graduate Diploma in Film Direction & Producion" Value="Post Graduate Diploma in Film Direction & Producion"></asp:ListItem>
-                                        <asp:ListItem Text="Post Graduate Diploma in Public Relation and Event Management" Value="Post Graduate Diploma in Public Relation and Event Management"></asp:ListItem>
-                                        <asp:ListItem Text="Post Graduate Diploma in Film Direction & Producion" Value="Post Graduate Diploma in Film Direction & Producion"></asp:ListItem>
-                                    </asp:DropDownList>
+                                    <asp:TextBox ID="txtaddclass" runat="server" TabIndex="1" class="form-control inlineDisplay" required="" Style="width: 100%" require=""></asp:TextBox>                             
                                 </div>
 
                                 <div class="form-group col-lg-3">
