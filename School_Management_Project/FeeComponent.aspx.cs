@@ -17,14 +17,17 @@ namespace School_Management_Project
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                
+            }
             Fill_Grid();
-            Bind_ddlfin(ddlFyear);
             ClearControlls();
         }
         public void ClearControlls()
         {
-            ddlFyear.SelectedValue = "";
-            ddlFeeMode.SelectedValue = "";
+            ddlFyear.SelectedItem.Text = "";
+            ddlFeeMode.SelectedItem.Text = "";
             txtCompName.Text = "";
             txtamount.Text = "";
             txtdescription.Text = "";
@@ -52,6 +55,7 @@ namespace School_Management_Project
             con.Close();
         }
 
+
         public void Bind_ddlfin(DropDownList ddl)
         {
             con.Open();
@@ -64,15 +68,20 @@ namespace School_Management_Project
             ddlFyear.DataValueField = "Fy_Id";
             ddlFyear.DataBind();
             con.Close();
-        }
+            }
 
-        protected void Button1_Click(object sender, EventArgs e)
+
+
+
+
+
+            protected void Button1_Click(object sender, EventArgs e)
         {
 
             con.Open();
             SqlCommand cmd = new SqlCommand("sp_TBL_feecomponent", con);
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@action", "insert");
+            cmd.Parameters.AddWithValue("@action", "insert");            
             cmd.Parameters.AddWithValue("@FYEAR", ddlFyear.SelectedValue);
             cmd.Parameters.AddWithValue("@FEES_TYPE", ddlFeeMode.SelectedValue);
             cmd.Parameters.AddWithValue("@CLASS_COMP", txtCompName.Text);

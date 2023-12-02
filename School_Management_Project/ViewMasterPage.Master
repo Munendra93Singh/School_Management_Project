@@ -14,11 +14,12 @@
     <meta name="author" content="KaijuThemes">
 
     <link type='text/css' href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400italic,600' rel='stylesheet'>
-    <link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
+   <%-- <link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet" />--%>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Font Awesome -->
     <link href="assets/fonts/themify-icons/themify-icons.css" rel="stylesheet" />
     <!-- Themify Icons -->
-    <link href="assets/css/Style2.css" rel="stylesheet" />
+    <%--<link href="assets/css/Style2.css" rel="stylesheet" />--%>
     <link href="assets/css/styles.css" rel="stylesheet" />
     <link href="assets/css/msc.css" rel="stylesheet" />
     <link href="assets/css/css1.css" rel="stylesheet" />

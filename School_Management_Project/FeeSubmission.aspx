@@ -85,7 +85,7 @@
                                                              <td>Student Class</td>
                                                             <td>Year/Sesion</td>
                                                             <td>Last Payement(Rs.)</td>
-                                                            <td>Last Payment date</td>
+                                                            <%--<td>Last Payment date</td>--%>
                                                             <td>Pay Fees</td>
                                                             <td>Payment Details</td>
                                                         </tr>
@@ -107,7 +107,7 @@
                                                         <td><%# Eval("Class")%></td>
                                                         <td><%# Eval("classyear")%></td>
                                                         <td><%# Eval("ClassAmount")%></td>
-                                                        <td><%--<%# Eval("FYear")%>--%></td>
+                                                         <%-- <td><%# Eval("FYear")%></td>--%>
                                                         <td style="text-align: center">
                                                             <asp:Button ID="btnRegFee" runat="server" Height="25px" Width="50px" class="btn btn-primary btn-sm" Text="Pay " />
                                                         </td>
@@ -126,7 +126,7 @@
                                                          <td><%# Eval("Class")%></td>
                                                        <td><%# Eval("classyear")%></td>
                                                         <td><%# Eval("ClassAmount")%></td>
-                                                        <td><%--<%# Eval("FYear")%>--%></td>
+                                                       <%-- <td><%# Eval("FYear")%></td>--%>
                                                         <td style="text-align: center">
                                                             <asp:Button ID="btnRegFee" runat="server" Height="25px" Width="50px" class="btn btn-primary btn-sm" Text="Pay " />
                                                         </td>
@@ -145,7 +145,7 @@
                                                         <td><%# Eval("Class")%></td>
                                                         <td><%# Eval("classyear")%></td>
                                                         <td><%# Eval("ClassAmount")%></td>
-                                                        <td><%--<%# Eval("FYear")%>--%></td>
+                                                      <%-- <td><%# Eval("FYear")%></td>--%>
                                                         <td style="text-align: center">
                                                             <asp:Button ID="btnRegFee" runat="server" Height="25px" Width="50px" class="btn btn-primary btn-sm" Text="Pay " />
                                                         </td>

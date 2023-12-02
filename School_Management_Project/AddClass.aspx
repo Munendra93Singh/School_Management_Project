@@ -88,11 +88,12 @@
                                                     <td runat="server" style="width: 5%;">Edit</td>
                                                     <td runat="server" style="width: 5%;">Delete</td>
                                                     <td runat="server" style="width: 5%;">Sr. No.</td>
-                                                    <td runat="server">Name</td>
-                                                    <td runat="server">Discription</td>                                                   
+                                                    <td runat="server" style="width: 40%;">Name</td>
+                                                      <td runat="server">Year/Semis</td>
+                                                    <%--<td runat="server">Discription</td>    --%>                                               
                                                     <td runat="server">Charges(Rs.)</td>
                                                      <td runat="server">Fin. Year</td>
-                                                   <%-- <td runat="server">Year/Semis</td>--%>
+                                                  
 
                                                 </tr>
                                                 <tbody>
@@ -120,10 +121,14 @@
                                                     <asp:Label ID="Label1" runat="server" Text='<%# Eval("Class")%>'>   
                                                     </asp:Label>
                                                 </td>
-                                                <td>
+                                                 <td>
+                                                    <asp:Label ID="Label4" runat="server" Text='<%# Eval("ClassYear")%>'>   
+                                                    </asp:Label>
+                                                </td>
+                                              <%--  <td>
                                                     <asp:Label ID="Label5" runat="server" Text='<%# Eval("ClassDicription")%>'>   
                                                     </asp:Label>
-                                                </td>                                              
+                                                </td> --%>                                             
                                                 <td>
                                                     <asp:Label ID="Label3" runat="server" Text='<%# Eval("ClassAmount")%>'>   
                                                     </asp:Label> .00
@@ -131,11 +136,7 @@
                                                   <td>
                                                     <asp:Label ID="Label2" runat="server" Text='<%# Eval("FYear")%>'>   
                                                     </asp:Label>
-                                                </td>
-                                               <%-- <td>
-                                                    <asp:Label ID="Label4" runat="server" Text='<%# Eval("ClassYear")%>'>   
-                                                    </asp:Label>
-                                                </td>--%>
+                                                </td>                                               
 
                                             </tr>
                                         </ItemTemplate>
@@ -159,10 +160,14 @@
                                                     <asp:Label ID="Label1" runat="server" Text='<%# Eval("Class")%>'>   
                                                     </asp:Label>
                                                 </td>
-                                                <td>
+                                                 <td>
+                                                    <asp:Label ID="Label5" runat="server" Text='<%# Eval("ClassYear")%>'>   
+                                                    </asp:Label>
+                                                </td>
+                                               <%-- <td>
                                                     <asp:Label ID="Label5" runat="server" Text='<%# Eval("ClassDicription")%>'>   
                                                     </asp:Label>
-                                                </td>                                               
+                                                </td>--%>                                               
                                                 <td>
                                                     <asp:Label ID="Label3" runat="server" Text='<%# Eval("ClassAmount")%>'>   
                                                     </asp:Label> .00
@@ -170,11 +175,7 @@
                                                  <td>
                                                     <asp:Label ID="Label2" runat="server" Text='<%# Eval("FYear")%>'>   
                                                     </asp:Label>
-                                                </td>
-                                               <%-- <td>
-                                                    <asp:Label ID="Label4" runat="server" Text='<%# Eval("ClassYear")%>'>   
-                                                    </asp:Label>
-                                                </td>--%>
+                                                </td>                                             
                                             </tr>
                                         </AlternatingItemTemplate>
                                     </asp:ListView>

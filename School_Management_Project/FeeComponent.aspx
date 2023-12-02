@@ -27,18 +27,23 @@
                             <div class="col-lg-12">
                                 <div class="form-group col-lg-2">
                                     <lebal for="dept" class="reqinput">Fin. Year:</lebal>
-                                    <asp:DropDownList ID="ddlFyear" runat="server" TabIndex="1" class="form-control inlineDisplay" required="" Style="width: 100%">
+                                    <asp:DropDownList ID="ddlFyear" runat="server" TabIndex="1" class="form-control inlineDisplay" Style="width: 100%">
+                                     <asp:ListItem Text="Select" Value="Select"></asp:ListItem>
+                                        <asp:ListItem Text="2022-2023" Value="2022-2023"></asp:ListItem>
+                                        <asp:ListItem Text="2023-2024" Value="2023-2024"></asp:ListItem>
+                                        <asp:ListItem Text="2024-2025" Value="2024-2025"></asp:ListItem>
+                                        <asp:ListItem Text="2025-2026" Value="2025-2026"></asp:ListItem>
                                     </asp:DropDownList>
                                 </div>
 
                                 <div class="form-group col-lg-4">
                                     <lebal for="dept" style="padding-bottom: 45px">Component Name:</lebal>
-                                    <asp:TextBox ID="txtCompName" runat="server" TabIndex="1" class="form-control inlineDisplay " placeholder="Component Name" size="40" required=""></asp:TextBox></td>
+                                    <asp:TextBox ID="txtCompName" runat="server" TabIndex="1" class="form-control inlineDisplay " placeholder="Component Name" size="40" ></asp:TextBox>
                                 </div>
 
                                 <div class="form-group col-lg-3">
                                     <lebal id="Td2" class="reqinput">Fee Type:</lebal>
-                                    <asp:DropDownList ID="ddlFeeMode" runat="server" TabIndex="1" class="form-control inlineDisplay" required="" Style="width: 100%">
+                                    <asp:DropDownList ID="ddlFeeMode" runat="server" TabIndex="1" class="form-control inlineDisplay" sStyle="width: 100%">
                                         <asp:ListItem Text="Select" Value="Select"></asp:ListItem>
                                         <asp:ListItem Text="Monthly" Value="Monthly"></asp:ListItem>
                                         <asp:ListItem Text="Once" Value="Once"></asp:ListItem>
@@ -49,7 +54,7 @@
 
                                 <div class="form-group col-lg-3">
                                     <lebal id="Td1" style="padding-bottom: 45px">Component Amount:</lebal>
-                                    <asp:TextBox ID="txtamount" runat="server" TabIndex="3" class="form-control inlineDisplay" size="40" placeholder="Please Enter Amount" required=""></asp:TextBox></td>
+                                    <asp:TextBox ID="txtamount" runat="server" TabIndex="3" class="form-control inlineDisplay" size="40" placeholder="Please Enter Amount" required=""></asp:TextBox>
                                 </div>
 
                                 <div class="form-group col-lg-5">

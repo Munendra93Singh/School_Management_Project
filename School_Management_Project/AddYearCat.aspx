@@ -1,6 +1,25 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/ViewMasterPage.Master" AutoEventWireup="true" CodeBehind="AddYearCat.aspx.cs" Inherits="School_Management_Project.AddYearCat" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <script type="text/javascript">
+    $(document).on("click", ".pdf-report", function () {
+        $.ajax({
+            url: "WebService/ReportService.asmx/PDFReportGenerate",
+            data: '{}',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+            type: "POST",
+            success: function (response) {
+                if (response.d.length > 0) {
+                    window.open(response.d[0].pdfReportPath);
+                }
+            },
+            error: function (response) {
+                alert(response.responseText);
+            }
+        });
+    });
+    </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="wrapper">
@@ -33,15 +52,15 @@
 
                                 <div class="form-group col-lg-3">
                                     <lebal for="dept" class="reqinput">Year:</lebal>
-                                    <asp:TextBox ID="txtyear" runat="server" TabIndex="1" class="form-control inlineDisplay" required="" Style="width: 100%">
+                                    <asp:TextBox ID="txtyear" runat="server" TabIndex="1" class="form-control inlineDisplay" placeholder="Class Year." required="" Style="width: 100%">
                                     </asp:TextBox>
                                 </div>
 
 
-
-                                <div class="form-group col-lg-5">
-                                    <lebal id="Td3" class="reqinput">Description:</lebal>
-                                    <asp:TextBox ID="txtdescription" runat="server" TabIndex="1" class="form-control inlineDisplay " placeholder="Description." size="40" required=""></asp:TextBox>
+                               
+                                <div class="form-group col-lg-4">
+                                    <lebal id="Td3" class="reqinput">Fees/Amount:</lebal>
+                                    <asp:TextBox ID="txtdescription" TextMode="Number" runat="server" TabIndex="1" class="form-control inlineDisplay " placeholder="Enter Class Fees/Amounts." size="40" required=""></asp:TextBox>
                                 </div>
                             </div>
                             <div class="col-lg-12">

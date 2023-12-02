@@ -26,8 +26,8 @@ namespace School_Management_Project
         }
         public void ClearControlls()
         {
-            ddlFyear.SelectedValue = "";
-            ddlyear.SelectedValue = "";
+            //ddlFyear.SelectedValue = "";
+            //ddlyear.SelectedValue = "";
             txtamount.Text = "";
             txtaddclass.Text = "";
             txtdescription.Text = "";
@@ -104,8 +104,8 @@ namespace School_Management_Project
             SqlCommand cmd = new SqlCommand("sp_TBL_Addclass", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@action", "insert");
-            cmd.Parameters.AddWithValue("@FYear", ddlFyear.SelectedValue);
-            cmd.Parameters.AddWithValue("@ClassYear", ddlyear.SelectedValue);
+            cmd.Parameters.AddWithValue("@FYear", ddlFyear.SelectedItem.Text);
+            cmd.Parameters.AddWithValue("@ClassYear", ddlyear.SelectedItem.Text);
             cmd.Parameters.AddWithValue("@ClassAmount", txtamount.Text);
             cmd.Parameters.AddWithValue("@Class", txtaddclass.Text);
             cmd.Parameters.AddWithValue("@ClassDicription", txtdescription.Text);
