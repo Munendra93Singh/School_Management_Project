@@ -260,12 +260,12 @@
                                                     <AlternatingItemTemplate>
                                                         <tr class="TableData" style="background-color: #dadada;">
                                                             <td>
-                                                                <a href='Writereaddata/<%# Eval("FEE_ID") %>' target="_blank">
+                                                                <a href='Writereaddata/<%# Eval("ENQ_ID") %>' target="_blank">
                                                                     <asp:Image ID="pdfimg" runat="server" ImageUrl="~/Img/edit.png" Height="25px" Width="29px" />
                                                                 </a>
                                                             </td>
                                                             <td>
-                                                                <a href='Writereaddata/<%# Eval("FEE_ID") %>' target="_blank">
+                                                                <a href='Writereaddata/<%# Eval("ENQ_ID") %>' target="_blank">
                                                                     <asp:Image ID="Image1" runat="server" ImageUrl="~/Img/delete.jpg" Height="25px" Width="29px" />
                                                                 </a>
                                                             </td>

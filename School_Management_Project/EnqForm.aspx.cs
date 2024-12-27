@@ -36,7 +36,7 @@ namespace School_Management_Project
             ddlOccupation.SelectedValue = "";
             ddlCourse.SelectedValue = "";
             ddlState.SelectedValue = "";
-            ddlcity.SelectedValue = "";
+            ddlcity.SelectedItem.Text = "";
             txtPin.Text = "";
             txtemail.Text = "";
             txtqualification.Text = "";
@@ -138,7 +138,7 @@ namespace School_Management_Project
             cmd.Parameters.AddWithValue("@Goccupation", ddlOccupation.SelectedValue);
             cmd.Parameters.AddWithValue("@Class", ddlCourse.SelectedValue);
             cmd.Parameters.AddWithValue("@State_Name", ddlState.SelectedValue);
-            cmd.Parameters.AddWithValue("@City_Name", ddlcity.SelectedValue);
+            cmd.Parameters.AddWithValue("@City_Name", ddlcity.SelectedItem.Text);
             cmd.Parameters.AddWithValue("@PinCode", txtPin.Text);
             cmd.Parameters.AddWithValue("@Email", txtemail.Text);
             cmd.Parameters.AddWithValue("@Qualification", txtqualification.Text);

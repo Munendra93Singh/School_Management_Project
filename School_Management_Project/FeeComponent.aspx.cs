@@ -26,7 +26,7 @@ namespace School_Management_Project
         }
         public void ClearControlls()
         {
-            ddlFyear.SelectedItem.Text = "";
+            //ddlFyear.SelectedItem.Text = "";
             ddlFeeMode.SelectedItem.Text = "";
             txtCompName.Text = "";
             txtamount.Text = "";
@@ -82,8 +82,8 @@ namespace School_Management_Project
             SqlCommand cmd = new SqlCommand("sp_TBL_feecomponent", con);
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.Parameters.AddWithValue("@action", "insert");            
-            cmd.Parameters.AddWithValue("@FYEAR", ddlFyear.SelectedValue);
-            cmd.Parameters.AddWithValue("@FEES_TYPE", ddlFeeMode.SelectedValue);
+            cmd.Parameters.AddWithValue("@FYEAR", ddlFyear.SelectedItem.Text);
+            cmd.Parameters.AddWithValue("@FEES_TYPE", ddlFeeMode.SelectedItem.Text);
             cmd.Parameters.AddWithValue("@CLASS_COMP", txtCompName.Text);
             cmd.Parameters.AddWithValue("@FEE_AMOUNT", txtamount.Text);
             cmd.Parameters.AddWithValue("@DISCRIPTIONS", txtdescription.Text);
